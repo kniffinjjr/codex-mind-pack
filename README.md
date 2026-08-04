@@ -2,7 +2,7 @@
 
 **Portable AI Mind pack optimized for OpenAI Codex** (and Claude Code / other agents).
 
-This repository packages the durable core of our AI Mind (Harness · Loop · Graph architecture + Graph Engineering principles) in a form that Codex can reliably follow even without access to private vaults or full GitHub context.
+This repository packages the durable core of our AI Mind (Harness · Loop · Graph architecture + Graph Engineering principles + RAI improvement discipline) in a form that Codex can reliably follow even without access to private vaults or full GitHub context.
 
 Clone it tomorrow on your work computer and use it as working context or the source of your `AGENTS.md`.
 
@@ -27,13 +27,14 @@ Then choose one (or both):
    # or work inside this directory for mind-aligned sessions
    ```
 
-3. **Context injection**: In Codex sessions, `@` mention files from this pack (especially `AGENTS.md` and `core/`).
+3. **Context injection**: In Codex sessions, `@` mention files from this pack (especially `AGENTS.md`, `core/`, and `templates/Probe-Suite.md`).
 
 ## What Codex Gets From This Pack
 
 - **AGENTS.md** — high-priority durable instructions Codex is trained to follow.
 - Core Harness · Loop · Graph mental model.
 - Concrete Graph Engineering rules (Qualifying Test, Diamond Pattern, Writer ≠ Checker, Intentional Residue).
+- **RAI Improvement Loop** + starter **Probe Suite** so you can harden agents (or the pack itself) before deploy.
 - Ready templates for planning and residual state.
 
 ## Structure
@@ -45,11 +46,14 @@ codex-mind-pack/
 ├── LICENSE
 ├── core/
 │   ├── Harness-Loop-Graph.md          # Condensed architecture
-│   └── Graph-Principles.md            # Operational rules (Qualifying Test, Diamond, Residue...)
+│   ├── Graph-Principles.md            # Operational rules (Qualifying Test, Diamond, Residue...)
+│   └── RAI-Improvement.md             # Convergent improvement loop (RAI)
 ├── templates/
 │   ├── Diamond-Research.md
 │   ├── Graph-Engineering-Template.md
-│   └── Residue-Structure.md
+│   ├── Residue-Structure.md
+│   ├── RAI-Loop.md                    # Executable improvement steps
+│   └── Probe-Suite.md                 # Starter probes + LEDGER
 └── examples/
     └── (future worked examples)
 ```
@@ -61,9 +65,10 @@ codex-mind-pack/
 3. Keep **Writer ≠ Checker**: never let the same context grade its own output.
 4. Use the Qualifying Test before spinning up multi-node graphs.
 5. Put human gates only where risk is asymmetric.
+6. **Before deploy**: run the Probe Suite (`templates/Probe-Suite.md`) via the RAI Loop and leave the LEDGER as residue.
 
 ## Relationship to Full AI-Mind-Vault
 
 This is the *portable, Codex-facing surface* of the private `AI-Mind-Vault`. The vault remains the source of truth for deeper concepts, projects, skills, and review process. Keep this pack in sync when major principles change.
 
-Created 2026-08-03 / 2026-08-04 for reliable agentic work.
+Created 2026-08-03 / 2026-08-04 for reliable agentic work. Updated with RAI + Probe Suite the same day.

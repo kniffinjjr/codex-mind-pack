@@ -39,6 +39,20 @@ Mental model: Environment → Feedback → Flow
 - For coding tasks: map structure once, inject only blast-radius / relevant context (see cost-efficient context guidance).
 - Done criteria: acceptance criteria met + verification evidence exists + residue written.
 
+## Improvement Discipline (RAI)
+
+Before deploying or significantly changing agent behavior:
+
+1. Treat this AGENTS.md (and project instructions) as the fixed written **spec**.
+2. Run the Probe Suite in `templates/Probe-Suite.md` (or an extended suite derived from real failures).
+3. Fix failures with small targeted edits.
+4. Re-run until every probe passes.
+5. Leave the Probe Ledger as intentional residue.
+
+Prefer **convergent** Recursive Auto-Improvement (RAI) toward the written spec. Do not default to open-ended divergent self-improvement.
+
+See `core/RAI-Improvement.md` and `templates/RAI-Loop.md`.
+
 ## When In Doubt
 
 1. Externalize state.
