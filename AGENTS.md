@@ -1,72 +1,96 @@
 # AGENTS.md — Portable AI Mind for Codex
 
-## Core Architecture (Harness · Loop · Graph)
+High-priority instruction surface. Full workflow detail lives in AI-Mind-Vault `Methodology/Agent-Operating-Workflows.md` when reachable.
+
+---
+
+## 0. Boot
+
+1. Obey this file.
+2. Classify: domain skill? **inner** loop? **mid** graph? **outer** improve?
+3. Externalize state as files. Done requires proof artifacts.
+4. Never invent parallel architecture when these rules already cover it.
+
+---
+
+## 1. Core Architecture (Harness · Loop · Graph)
 
 Agent = Model + Harness.
 
-Stack as systems mature:
-- **Harness** — tools, permissions, state, observability, safety, context injection (the machinery around the model)
-- **Loop** — repeated work-and-evidence cycle with clear goal, stopping rules, and feedback (evidence > confidence)
-- **Graph** — explicit workflow topology (nodes, edges, state) only when needed
+- **Harness** — tools, permissions, state, observability, safety, context injection
+- **Loop** — work → evidence → feedback; hard stops; **never loop on confidence**
+- **Graph** — explicit topology only when Qualifying Test is met
+
+Nested grains: Inner (turn) ⊂ Mid (job/pipeline) ⊂ Outer (improve the system).
 
 Mental model: Environment → Feedback → Flow
 
-## Graph Engineering Rules (Committed Principles)
+---
 
-1. **Qualifying Test**  
-   Use a graph only when the work has several of: multiple steps, independent sources/paths that can run in parallel, need for checks/grading, material risk if wrong, or required human approvals.  
-   Otherwise use a better prompt + better context.
+## 2. Graph Engineering Rules
 
-2. **Diamond Pattern (default research / analysis shape)**  
-   Planner → parallel specialized researchers (different lenses) → independent Skeptic that attacks the evidence → Merge of what survives → Human gate.
+1. **Qualifying Test** — graph only if several of: multi-step, independent sources/paths, parallel work, independent checks, material risk, required human approvals. Else better prompt + context.
+2. **Diamond Pattern** — Planner → parallel researchers → independent Skeptic → Merge → Human gate.
+3. **Writer ≠ Checker** — never grade your own output in the same context.
+4. **Intentional Residue** — durable artifacts every meaningful step; shared state is external memory.
+5. **Start Manual → Validate → Automate**
+6. **Smallest Graph That Improves Quality** — human gates where mistakes are expensive.
+7. **Static Graph vs Dynamic Board** — loop if one agent holds the job; static for stable pipelines; dynamic board when work reshapes mid-run.
+8. **Done Is a Claim Until Proof**
+9. **Handoff Without Amnesia** — Intent, decisions, artifacts by ref, **ruled-out paths**, open questions, next-action spec. Pre-split test before adding a second agent.
 
-3. **Writer ≠ Checker**  
-   Never let the same model (or same context) grade its own output. Structural separation of generation from verification is mandatory for high-stakes work.
+See `core/Graph-Principles.md` and `templates/Handoff-Artifact.md`.
 
-4. **Intentional Residue / Externalized State**  
-   Every node/step should leave durable artifacts (files, notes, scored tables, evidence logs, handoff envelopes). Shared state lives in the filesystem, not only in chat. Residue compounds across runs.
+---
 
-5. **Start Manual → Validate Topology → Then Automate**  
-   Draw the jobs and arrows first. Run by hand once. Only then orchestrate.
+## 3. Operating Workflows (W0–W7)
 
-6. **Smallest Graph That Improves Quality**  
-   More agents ≠ better. Put human decision points only where mistakes are expensive.
+| ID | When |
+|----|------|
+| **W1 Classify** | Before multi-step work |
+| **W2 Design** | New system: Harness → Loop → Qualifying Test → Graph → checklist → manual run |
+| **W3 Execute** | Inner default; mid if qualified; residue each stage |
+| **W4 Diagnose** | Layer then grain; fix owner first |
+| **W5 Handoff** | Cross-agent / cross-session |
+| **W6 Improve** | Probe Suite / RAI outer only |
+| **W7 Mind change** | Explicit user direction; don't invent principles |
 
-7. **Static Graph vs Dynamic Board**  
-   Loop when one agent can hold the job. Static graph for stable pipelines. Dynamic shared board when work discovers new tasks and the team should reshape mid-run.
+**Failure quick card**
 
-8. **Done Is a Claim Until Proof**  
-   Status without evidence is not done. Re-run checks. Do not trust bookkeeping that lives only in an agent’s head.
+```
+Missing capability / lost state / no audit → Harness
+Unbounded retry / no evidence / self-grade → Loop
+Wrong order / skipped gate / bad merge → Graph
+Can't tell if improved → Outer residue missing
+```
 
-9. **Handoff Without Amnesia**  
-   Multi-agent boundaries require a structured Handoff Artifact (intent, decisions, artifacts by reference, **ruled-out paths**, open questions). See `templates/Handoff-Artifact.md`.
+---
 
-## Operating Rules
+## 4. Cost & Context
 
-- Prefer evidence over confidence or self-report.
-- Externalize plans, decisions, verification results, and status as files.
-- For coding tasks: map structure once, inject only blast-radius / relevant context (see cost-efficient context guidance).
-- Done criteria: acceptance criteria met + verification evidence exists + residue written.
+- Structural / blast-radius context over full-repo dumps
+- Map once; inject the relevant slice
+- Dual metric: quality **and** tokens/$ per successful task
 
-## Improvement Discipline (RAI)
+---
 
-Before deploying or significantly changing agent behavior:
+## 5. RAI / Improvement
 
-1. Treat this AGENTS.md (and project instructions) as the fixed written **spec**.
-2. Run the Probe Suite in `templates/Probe-Suite.md` (or an extended suite derived from real failures).
-3. Fix failures with small targeted edits.
-4. Re-run until every probe passes.
-5. Leave the Probe Ledger as intentional residue.
+1. Treat this AGENTS.md (+ project instructions) as fixed **spec**
+2. Run Probe Suite (`templates/Probe-Suite.md`) derived from real failures
+3. One lever per failure; re-run until PASS
+4. Leave Probe Ledger as residue
 
-Prefer **convergent** Recursive Auto-Improvement (RAI) toward the written spec. Do not default to open-ended divergent self-improvement.
+Convergent RAI only — not open-ended self-improvement.
 
-See `core/RAI-Improvement.md` and `templates/RAI-Loop.md`.
+---
 
-## When In Doubt
+## 6. When In Doubt
 
-1. Externalize state.
-2. Separate generation from verification.
-3. Prefer the smallest viable topology.
-4. Ask for human gate at irreversible steps.
+1. Externalize state
+2. Separate generation from verification
+3. Prefer smallest viable topology
+4. Human gate at irreversible steps
+5. Ask which **grain** failed before rewriting the system
 
-This file is the high-priority instruction surface for Codex and compatible agents. Follow it strictly.
+Follow strictly.
