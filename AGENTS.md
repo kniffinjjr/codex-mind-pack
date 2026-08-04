@@ -24,13 +24,22 @@ Mental model: Environment → Feedback → Flow
    Never let the same model (or same context) grade its own output. Structural separation of generation from verification is mandatory for high-stakes work.
 
 4. **Intentional Residue / Externalized State**  
-   Every node/step should leave durable artifacts (files, notes, scored tables, evidence logs). Shared state lives in the filesystem, not only in chat. Residue compounds across runs.
+   Every node/step should leave durable artifacts (files, notes, scored tables, evidence logs, handoff envelopes). Shared state lives in the filesystem, not only in chat. Residue compounds across runs.
 
 5. **Start Manual → Validate Topology → Then Automate**  
    Draw the jobs and arrows first. Run by hand once. Only then orchestrate.
 
 6. **Smallest Graph That Improves Quality**  
    More agents ≠ better. Put human decision points only where mistakes are expensive.
+
+7. **Static Graph vs Dynamic Board**  
+   Loop when one agent can hold the job. Static graph for stable pipelines. Dynamic shared board when work discovers new tasks and the team should reshape mid-run.
+
+8. **Done Is a Claim Until Proof**  
+   Status without evidence is not done. Re-run checks. Do not trust bookkeeping that lives only in an agent’s head.
+
+9. **Handoff Without Amnesia**  
+   Multi-agent boundaries require a structured Handoff Artifact (intent, decisions, artifacts by reference, **ruled-out paths**, open questions). See `templates/Handoff-Artifact.md`.
 
 ## Operating Rules
 
