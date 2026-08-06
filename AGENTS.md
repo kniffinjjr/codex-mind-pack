@@ -20,8 +20,9 @@ Full workflow detail lives in the private AI-Mind-Vault (`Methodology/Agent-Oper
 - **Harness** — tools, state, permissions, observability, context injection, safety around the model.
 - **Loop** — work → evidence → feedback with hard stopping rules. **Never loop on confidence.**
 - **Graph** — explicit topology only when **Qualifying Test** is met.
+- **Eval** — score that **changes the next edge** (not a dashboard). Writer ≠ Checker. See `core/Eval-Engineering.md`.
 
-Nested grains: **Inner** (turn) ⊂ **Mid** (job/pipeline) ⊂ **Outer** (improve the system). Same seven loop fields at every grain. See `core/Harness-Loop-Graph.md` (Nested Cycles section).
+Nested grains: **Inner** (turn) ⊂ **Mid** (job/pipeline) ⊂ **Outer** (improve the system). Same seven loop fields at every grain. See `core/Nested-Cycles.md` and `core/Harness-Loop-Graph.md`.
 
 ---
 
@@ -36,7 +37,7 @@ Planner → parallel researchers → independent Skeptic → Merge → Human gat
 
 **Intentional Residue** — every meaningful step leaves durable artifacts. Shared state is external memory.
 
-**Start Manual → Validate → Automate** — draw topology; run by hand once; then automate.
+**Start Manual → Validate → Automate** — draw topology; run by hand once; then automate. Diagram geometry: `core/Diagram-Principles.md`.
 
 **Smallest graph** that improves quality. Human gates where mistakes are expensive.
 
@@ -98,7 +99,7 @@ Handoff must include: Intent · Decisions · Artifacts by ref · **Ruled-out pat
 3. One lever per failure; re-run until PASS
 4. Leave Probe Ledger as residue
 
-Convergent RAI only — not open-ended self-improvement. See `core/RAI-Improvement.md`.
+Convergent RAI only — not open-ended self-improvement. See `core/RAI-Improvement.md` and `core/Eval-Engineering.md`.
 
 ---
 

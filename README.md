@@ -32,11 +32,13 @@ Then choose one (or both):
 ## What This Pack Provides
 
 - **AGENTS.md** — high-priority durable instructions agents are trained to follow.
-- Core Harness · Loop · Graph mental model + Nested Cycles (Inner ⊂ Mid ⊂ Outer).
+- Core Harness · Loop · Graph mental model + **Nested Cycles** (Inner ⊂ Mid ⊂ Outer).
+- **Eval Engineering** — score that changes the next edge; convergent RAI.
 - Concrete Graph Engineering rules (Qualifying Test, Diamond Pattern, Writer ≠ Checker, Intentional Residue).
+- **Diagram Principles** — geometry-first rules so architecture visuals stay clear (nested vs stack vs spine vs loop).
 - **RAI Improvement Loop** + starter **Probe Suite** (including handoff / negative-space probes).
 - Ready templates for planning, residue, and handoffs.
-- **Specialist personalities** (optional ≤4000-char packs) adapted for Codex: PHD Researcher, Deals Analyst, Bogle Fiduciary, Elite Trader, Code Architect, Forge Hardware, PA Tax Counsel, Mogul Real Estate.
+- **Specialist personalities** (optional ≤4000-char packs) adapted for Codex.
 
 ## Structure
 
@@ -46,8 +48,11 @@ codex-mind-pack/
 ├── README.md                          # This file
 ├── LICENSE
 ├── core/
-│   ├── Harness-Loop-Graph.md          # Architecture + Nested Cycles
+│   ├── Harness-Loop-Graph.md          # Architecture overview
+│   ├── Nested-Cycles.md               # Grain model + promotion + residue
 │   ├── Graph-Principles.md
+│   ├── Eval-Engineering.md            # Control-flow eval + RAI
+│   ├── Diagram-Principles.md          # Architecture visual geometry
 │   └── RAI-Improvement.md
 ├── templates/
 │   ├── Diamond-Research.md
@@ -57,20 +62,13 @@ codex-mind-pack/
 │   ├── RAI-Loop.md
 │   └── Probe-Suite.md
 └── personalities/
-    ├── README.md                      # How to use the specialist packs
-    ├── PHD-Researcher.md
-    ├── Deals-Analyst.md
-    ├── Bogle-Fiduciary.md
-    ├── Elite-Trader.md
-    ├── Code-Architect.md
-    ├── Forge-Hardware.md
-    ├── PA-Tax-Counsel.md
-    └── Mogul-Real-Estate.md
+    ├── README.md
+    └── … specialist packs
 ```
 
 ## Purpose: Personal Research vs Work Projects
 
-- **Private AI-Mind-Vault** = personal research, Grok-native surfaces, full methodology, project overviews, review process.
+- **Private AI-Mind-Vault** = personal research, Grok-native surfaces, full methodology, project overviews, review process, diagram-design skill.
 - **This pack** = portable Codex / GPT surface intended for work computers, shared repos, and any environment where Grok branding or personal residue should stay out.
 
 Architecture stays identical so the two surfaces remain aligned. Domain skills and Grok-specific catalogs stay in the Vault; the pack carries only the durable core + neutral specialist packs.
@@ -87,21 +85,24 @@ Architecture stays identical so the two surfaces remain aligned. Domain skills a
 
 ## Regular Update Policy
 
-- **Last synced from AI-Mind-Vault:** 2026-08-06 (personalities adapted same day)
-- **Trigger a re-sync when:** AGENTS.md, Nested-Cycles, Graph Principles, RAI, Probe Suite, Handoff Spec, or the specialist personality set change in the private vault.
+- **Last synced from AI-Mind-Vault:** 2026-08-06 (afternoon — Nested-Cycles, Eval, Diagram Principles)
+- **Trigger a re-sync when:** AGENTS.md, Nested-Cycles, Graph Principles, RAI, Probe Suite, Handoff Spec, Eval Engineering, or the specialist personality set change in the private vault.
 - **Owner action:** Ask GrokRarian (or any agent with vault access) to “sync codex-mind-pack” after those controlling documents are updated and approved.
 - **This pack never auto-pulls.** All updates are intentional pushes.
 
 ## Changelog (pack)
 
-### 2026-08-06 (later)
+### 2026-08-06 (afternoon)
+- Added `core/Nested-Cycles.md` (full grain model, promotion, residue boundaries).
+- Added `core/Eval-Engineering.md` (control-flow eval + convergent RAI).
+- Added `core/Diagram-Principles.md` (geometry-first architecture visuals).
+- AGENTS.md points at Nested-Cycles, Eval, and Diagram Principles.
+
+### 2026-08-06 (earlier)
 - Added `personalities/` with 8 GPT/Codex-adapted specialist packs.
 - Clarified pack purpose: separate personal research surface from work projects while keeping architecture aligned.
 - AGENTS.md gains pointer to optional personalities.
-
-### 2026-08-06 (earlier)
-- Full sync of portable rules (Nested Cycles, W table, cost policy, offline rules).
-- GPT / Codex rebrand of all platform references.
+- Full sync of portable rules (Nested Cycles summary, W table, cost policy, offline rules).
 - Probe Suite expanded with handoff probes; Handoff template tightened.
 
 Created 2026-08-03 / 2026-08-04. Maintained as the reliable GPT/Codex surface of the AI Mind.
