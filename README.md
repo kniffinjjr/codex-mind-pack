@@ -2,7 +2,7 @@
 
 **Portable AI Mind pack optimized for OpenAI Codex and GPT-based agents** (also usable with Claude Code and other coding agents).
 
-This repository packages the durable core of the AI Mind (Harness · Loop · Graph architecture + Graph Engineering principles + RAI improvement discipline + Nested Cycles) in a form that Codex / GPT agents can reliably follow even without access to private vaults or full GitHub context.
+This repository is the **public, work-safe surface** of the private AI-Mind-Vault. It keeps the same Harness · Loop · Graph architecture, Nested Cycles, RAI discipline, and Probe Suite so personal research and work projects stay aligned, while cleanly separating Grok-native personal surfaces from Codex/GPT work surfaces.
 
 Clone it and use it as working context or the source of your `AGENTS.md`.
 
@@ -27,67 +27,81 @@ Then choose one (or both):
    # or work inside this directory for mind-aligned sessions
    ```
 
-3. **Context injection**: In Codex / GPT sessions, `@` mention files from this pack (especially `AGENTS.md`, `core/`, and `templates/Probe-Suite.md`).
+3. **Context injection**: In Codex / GPT sessions, `@` mention files from this pack (especially `AGENTS.md`, `core/`, `templates/Probe-Suite.md`, and any needed `personalities/` pack).
 
 ## What This Pack Provides
 
 - **AGENTS.md** — high-priority durable instructions agents are trained to follow.
 - Core Harness · Loop · Graph mental model + Nested Cycles (Inner ⊂ Mid ⊂ Outer).
 - Concrete Graph Engineering rules (Qualifying Test, Diamond Pattern, Writer ≠ Checker, Intentional Residue).
-- **RAI Improvement Loop** + starter **Probe Suite** (including handoff / negative-space probes) so you can harden agents (or the pack itself) before deploy.
+- **RAI Improvement Loop** + starter **Probe Suite** (including handoff / negative-space probes).
 - Ready templates for planning, residue, and handoffs.
+- **Specialist personalities** (optional ≤4000-char packs) adapted for Codex: PHD Researcher, Deals Analyst, Bogle Fiduciary, Elite Trader, Code Architect, Forge Hardware, PA Tax Counsel, Mogul Real Estate.
 
 ## Structure
 
 ```
 codex-mind-pack/
-├── AGENTS.md                          # Primary instruction file for agents
+├── AGENTS.md                          # Primary instruction file
 ├── README.md                          # This file
 ├── LICENSE
 ├── core/
-│   ├── Harness-Loop-Graph.md          # Condensed architecture + Nested Cycles
-│   ├── Graph-Principles.md            # Operational rules
-│   └── RAI-Improvement.md             # Convergent improvement loop
+│   ├── Harness-Loop-Graph.md          # Architecture + Nested Cycles
+│   ├── Graph-Principles.md
+│   └── RAI-Improvement.md
 ├── templates/
 │   ├── Diamond-Research.md
 │   ├── Graph-Engineering-Template.md
 │   ├── Residue-Structure.md
 │   ├── Handoff-Artifact.md
 │   ├── RAI-Loop.md
-│   └── Probe-Suite.md                 # Starter probes + LEDGER (incl. P11/P12)
-└── examples/
-    └── (future worked examples)
+│   └── Probe-Suite.md
+└── personalities/
+    ├── README.md                      # How to use the specialist packs
+    ├── PHD-Researcher.md
+    ├── Deals-Analyst.md
+    ├── Bogle-Fiduciary.md
+    ├── Elite-Trader.md
+    ├── Code-Architect.md
+    ├── Forge-Hardware.md
+    ├── PA-Tax-Counsel.md
+    └── Mogul-Real-Estate.md
 ```
+
+## Purpose: Personal Research vs Work Projects
+
+- **Private AI-Mind-Vault** = personal research, Grok-native surfaces, full methodology, project overviews, review process.
+- **This pack** = portable Codex / GPT surface intended for work computers, shared repos, and any environment where Grok branding or personal residue should stay out.
+
+Architecture stays identical so the two surfaces remain aligned. Domain skills and Grok-specific catalogs stay in the Vault; the pack carries only the durable core + neutral specialist packs.
 
 ## Recommended Codex / GPT Workflow
 
 1. Start complex tasks in **plan mode** and write the topology (or Diamond) as files first.
-2. Force **intentional residue**: every meaningful step writes durable artifacts (PLAN.md, EVIDENCE.md, STATUS.md, etc.).
-3. Keep **Writer ≠ Checker**: never let the same context grade its own output.
-4. Use the Qualifying Test before spinning up multi-node graphs.
+2. Force **intentional residue**: every meaningful step writes durable artifacts.
+3. Keep **Writer ≠ Checker**.
+4. Use the Qualifying Test before multi-node graphs.
 5. Put human gates only where risk is asymmetric.
-6. **Before deploy**: run the Probe Suite (`templates/Probe-Suite.md`) via the RAI Loop and leave the LEDGER as residue.
-
-## Relationship to Full AI-Mind-Vault
-
-This is the *portable, Codex/GPT-facing surface* of the private AI-Mind-Vault. The vault remains the source of truth for deeper concepts, projects, skills, and the review process. Keep this pack in sync when major principles change.
-
-**Naming policy (this pack only):** All agent/platform references use GPT / Codex framing. No Grok-prefixed agent names are carried into this public surface.
+6. **Before deploy**: run the Probe Suite via the RAI Loop and leave the LEDGER as residue.
+7. Optionally load one personality pack for domain depth; it never overrides AGENTS.md.
 
 ## Regular Update Policy
 
-- **Last synced from AI-Mind-Vault:** 2026-08-06
-- **Trigger a re-sync when:** AGENTS.md, Nested-Cycles, Graph Principles, RAI, Probe Suite, or Handoff Spec change in the private vault.
+- **Last synced from AI-Mind-Vault:** 2026-08-06 (personalities adapted same day)
+- **Trigger a re-sync when:** AGENTS.md, Nested-Cycles, Graph Principles, RAI, Probe Suite, Handoff Spec, or the specialist personality set change in the private vault.
 - **Owner action:** Ask GrokRarian (or any agent with vault access) to “sync codex-mind-pack” after those controlling documents are updated and approved.
-- **This pack never auto-pulls.** All updates are intentional pushes so the portable surface stays deliberate and reviewable.
+- **This pack never auto-pulls.** All updates are intentional pushes.
 
 ## Changelog (pack)
 
-### 2026-08-06
-- Full sync of portable rules from vault (Nested Cycles, full W table, cost policy, offline rules).
-- GPT / Codex rebrand applied to all platform/agent references in this pack only.
-- Probe Suite expanded with handoff / negative-space probes (P11, P12).
-- Handoff template tightened; core files refreshed.
-- Explicit regular-update policy added to README.
+### 2026-08-06 (later)
+- Added `personalities/` with 8 GPT/Codex-adapted specialist packs.
+- Clarified pack purpose: separate personal research surface from work projects while keeping architecture aligned.
+- AGENTS.md gains pointer to optional personalities.
+
+### 2026-08-06 (earlier)
+- Full sync of portable rules (Nested Cycles, W table, cost policy, offline rules).
+- GPT / Codex rebrand of all platform references.
+- Probe Suite expanded with handoff probes; Handoff template tightened.
 
 Created 2026-08-03 / 2026-08-04. Maintained as the reliable GPT/Codex surface of the AI Mind.

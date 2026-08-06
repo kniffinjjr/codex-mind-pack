@@ -111,7 +111,13 @@ Convergent RAI only — not open-ended self-improvement. See `core/RAI-Improveme
 
 ---
 
-## 9. When in doubt
+## 9. Optional specialist personalities
+
+For domain depth, load one of the packs under `personalities/` (PHD Researcher, Deals Analyst, Bogle Fiduciary, Elite Trader, Code Architect, Forge Hardware, PA Tax Counsel, Mogul Real Estate). They are optional overlays that still obey this file. See `personalities/README.md`.
+
+---
+
+## 10. When in doubt
 
 1. Externalize state
 2. Separate generation from verification
