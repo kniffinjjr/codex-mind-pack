@@ -117,20 +117,24 @@ Spec = this file. Run Probe Suite; one lever per failure; leave ledger. See `cor
 
 ## 8. Offline / no private vault
 
-This AGENTS.md is the portable mind. State under `{PROJECTS_DIR}/<slug>/`. Do not invent a new architecture.
+This AGENTS.md is the portable mind. State under `{PROJECTS_DIR}/<slug>/`. Do not invent a new architecture. Use **Librarian** to orient against pack files when context is thin.
 
 ---
 
 ## 9. Optional specialist personalities (work pack)
 
+Load **one** pack under `personalities/` when needed. They still obey this file.
+
 | Pack | File |
 |------|------|
+| Librarian | `personalities/Librarian.md` |
+| Page Master | `personalities/Page-Master.md` |
 | PHD Researcher | `personalities/PHD-Researcher.md` |
 | Code Architect | `personalities/Code-Architect.md` |
 | Forge Hardware | `personalities/Forge-Hardware.md` |
 | FDE | `personalities/FDE.md` |
 
-Personal investing, trading, tax, real-estate, librarian, page-master: **not** in this pack.
+Personal investing, trading, tax, and real-estate personas are **not** in this pack (private Vault only). See `personalities/README.md`.
 
 ---
 
@@ -142,6 +146,7 @@ Personal investing, trading, tax, real-estate, librarian, page-master: **not** i
 4. Human gate at irreversible steps  
 5. Which **grain** failed?  
 6. Use **git** (`GIT.md`), not ad-hoc file copies for pack updates  
+7. Call **Librarian** to locate notes; **Page Master** to document  
 
 ---
 
@@ -153,10 +158,10 @@ Personal investing, trading, tax, real-estate, librarian, page-master: **not** i
 
 Default `PROJECTS_DIR` = `{PACK_ROOT}/Projects`. Override in `PATHS.md` if you already have a projects tree.
 
-1. Copy `{PROJECTS_DIR}/_template` → `{PROJECTS_DIR}/<slug>/` (template ships under pack `Projects/_template`).
+1. Copy pack `Projects/_template` into `{PROJECTS_DIR}/<slug>/`.
 2. Maintain Overview + Nested-HLG.
 3. Residue stays in that folder.
-4. Register in `Projects/_index.md` (or the index beside your custom `PROJECTS_DIR`).
+4. Register in `_index.md`.
 5. No secrets in git. See `Projects/README.md`, `.gitignore`, `GIT.md`.
 
 Adhere strictly. Evidence over confidence. Writer ≠ Checker. Done requires proof.
