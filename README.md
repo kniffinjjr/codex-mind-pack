@@ -29,6 +29,8 @@ Then choose one (or both):
 
 3. **Context injection**: In Codex / GPT sessions, `@` mention files from this pack (especially `AGENTS.md`, `core/`, `templates/Probe-Suite.md`, and any needed `personalities/` pack).
 
+4. **Active project work**: park it under `Projects/<slug>/` (see below). This pack does **not** ship real projects.
+
 ## What This Pack Provides
 
 - **AGENTS.md** — high-priority durable instructions agents are trained to follow.
@@ -39,6 +41,7 @@ Then choose one (or both):
 - **RAI Improvement Loop** + starter **Probe Suite** (including handoff / negative-space probes).
 - Ready templates for planning, residue, and handoffs.
 - **Specialist personalities** (optional ≤4000-char packs) adapted for Codex.
+- **Projects/** — directory path and templates only; Codex moves active work here.
 
 ## Structure
 
@@ -48,11 +51,11 @@ codex-mind-pack/
 ├── README.md                          # This file
 ├── LICENSE
 ├── core/
-│   ├── Harness-Loop-Graph.md          # Architecture overview
-│   ├── Nested-Cycles.md               # Grain model + promotion + residue
+│   ├── Harness-Loop-Graph.md
+│   ├── Nested-Cycles.md
 │   ├── Graph-Principles.md
-│   ├── Eval-Engineering.md            # Control-flow eval + RAI
-│   ├── Diagram-Principles.md          # Architecture visual geometry
+│   ├── Eval-Engineering.md
+│   ├── Diagram-Principles.md
 │   └── RAI-Improvement.md
 ├── templates/
 │   ├── Diamond-Research.md
@@ -61,48 +64,68 @@ codex-mind-pack/
 │   ├── Handoff-Artifact.md
 │   ├── RAI-Loop.md
 │   └── Probe-Suite.md
-└── personalities/
-    ├── README.md
-    └── … specialist packs
+├── personalities/
+│   ├── README.md
+│   └── … specialist packs
+└── Projects/                          # Active work lives here (not shipped projects)
+    ├── README.md                      # Path rules for agents
+    ├── _index.md                      # Registry (starts empty)
+    └── _template/                     # Copy → Projects/<slug>/
+        ├── Overview.md
+        └── Nested-HLG.md
 ```
+
+### Projects path (important)
+
+**Canonical location for active projects:**
+
+```text
+Projects/<project-slug>/
+```
+
+Copy `_template` when starting work. Register a line in `_index.md`. Keep residue inside that folder. Do **not** put project files in `core/`, `templates/`, or the repo root. See `Projects/README.md`.
+
+Real project content is **never** part of this public pack by design (work-safe; offline/local git friendly).
 
 ## Purpose: Personal Research vs Work Projects
 
-- **Private AI-Mind-Vault** = personal research, Grok-native surfaces, full methodology, project overviews, review process, diagram-design skill.
-- **This pack** = portable Codex / GPT surface intended for work computers, shared repos, and any environment where Grok branding or personal residue should stay out.
+- **Private AI-Mind-Vault** = personal research, Grok-native surfaces, full methodology, thin project overviews, review process.
+- **This pack** = portable Codex / GPT surface for work computers and shared environments: architecture + personalities + **empty project path**.
 
-Architecture stays identical so the two surfaces remain aligned. Domain skills and Grok-specific catalogs stay in the Vault; the pack carries only the durable core + neutral specialist packs.
+Architecture stays identical so the two surfaces remain aligned. Domain skills and personal catalogs stay in the Vault; the pack carries the durable core, neutral specialist packs, and a place for local active work.
 
 ## Recommended Codex / GPT Workflow
 
 1. Start complex tasks in **plan mode** and write the topology (or Diamond) as files first.
-2. Force **intentional residue**: every meaningful step writes durable artifacts.
-3. Keep **Writer ≠ Checker**.
-4. Use the Qualifying Test before multi-node graphs.
-5. Put human gates only where risk is asymmetric.
-6. **Before deploy**: run the Probe Suite via the RAI Loop and leave the LEDGER as residue.
-7. Optionally load one personality pack for domain depth; it never overrides AGENTS.md.
+2. If the work is a **project**, create `Projects/<slug>/` from `_template` and keep residue there.
+3. Force **intentional residue**: every meaningful step writes durable artifacts.
+4. Keep **Writer ≠ Checker**.
+5. Use the Qualifying Test before multi-node graphs.
+6. Put human gates only where risk is asymmetric.
+7. **Before deploy**: run the Probe Suite via the RAI Loop and leave the LEDGER as residue.
+8. Optionally load one personality pack for domain depth; it never overrides AGENTS.md.
 
 ## Regular Update Policy
 
-- **Last synced from AI-Mind-Vault:** 2026-08-06 (afternoon — Nested-Cycles, Eval, Diagram Principles)
+- **Last synced from AI-Mind-Vault:** 2026-08-06 (Projects path rules)
 - **Trigger a re-sync when:** AGENTS.md, Nested-Cycles, Graph Principles, RAI, Probe Suite, Handoff Spec, Eval Engineering, or the specialist personality set change in the private vault.
 - **Owner action:** Ask GrokRarian (or any agent with vault access) to “sync codex-mind-pack” after those controlling documents are updated and approved.
 - **This pack never auto-pulls.** All updates are intentional pushes.
 
 ## Changelog (pack)
 
+### 2026-08-06 (evening)
+- Added `Projects/` path scaffold: README (rules), `_index.md`, `_template/` (Overview + Nested-HLG).
+- No real projects shipped — agents park active work under `Projects/<slug>/`.
+- AGENTS.md + README document the binding path rule.
+
 ### 2026-08-06 (afternoon)
-- Added `core/Nested-Cycles.md` (full grain model, promotion, residue boundaries).
-- Added `core/Eval-Engineering.md` (control-flow eval + convergent RAI).
-- Added `core/Diagram-Principles.md` (geometry-first architecture visuals).
+- Added `core/Nested-Cycles.md`, `core/Eval-Engineering.md`, `core/Diagram-Principles.md`.
 - AGENTS.md points at Nested-Cycles, Eval, and Diagram Principles.
 
 ### 2026-08-06 (earlier)
 - Added `personalities/` with 8 GPT/Codex-adapted specialist packs.
 - Clarified pack purpose: separate personal research surface from work projects while keeping architecture aligned.
-- AGENTS.md gains pointer to optional personalities.
-- Full sync of portable rules (Nested Cycles summary, W table, cost policy, offline rules).
-- Probe Suite expanded with handoff probes; Handoff template tightened.
+- Full sync of portable rules; Probe Suite expanded; Handoff template tightened.
 
 Created 2026-08-03 / 2026-08-04. Maintained as the reliable GPT/Codex surface of the AI Mind.
