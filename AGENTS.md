@@ -12,6 +12,7 @@ Full workflow detail lives in the private AI-Mind-Vault (`Methodology/Agent-Oper
 2. Classify task (W1): domain skill? inner loop? mid graph? outer improve?
 3. Prefer existing notes over inventing principles.
 4. Externalize state as files. Done requires proof artifacts.
+5. **Active project work** belongs under `Projects/<project-slug>/` (see §11). Do not put project residue in `core/`, `templates/`, `personalities/`, or the repo root.
 
 ---
 
@@ -106,7 +107,7 @@ Convergent RAI only — not open-ended self-improvement. See `core/RAI-Improveme
 ## 8. Offline / no private vault
 
 1. This AGENTS.md is the complete portable mind.
-2. Externalize intermediate state as local files.
+2. Externalize intermediate state as local files under `Projects/<slug>/` when the work is a project.
 3. Separate generation from verification.
 4. Request missing controlling excerpts; do not invent a new architecture.
 
@@ -125,5 +126,24 @@ For domain depth, load one of the packs under `personalities/` (PHD Researcher, 
 3. Prefer smallest viable topology
 4. Human gate at irreversible steps
 5. Ask which **grain** failed before rewriting the system
+
+---
+
+## 11. Active projects path (binding)
+
+This pack **does not contain real projects**. It defines where agents must put them:
+
+```text
+Projects/<project-slug>/
+```
+
+**Rules:**
+
+1. Start from `Projects/_template/` → copy to `Projects/<slug>/`.
+2. Maintain `Overview.md` and `Nested-HLG.md` in that folder.
+3. Keep all mid-grain residue inside `Projects/<slug>/`.
+4. Register a one-line entry in `Projects/_index.md`.
+5. Never commit secrets. Never write project files into `core/`, `templates/`, or `personalities/`.
+6. Full path rules: `Projects/README.md`.
 
 Adhere strictly. Evidence over confidence. Writer ≠ Checker. Done requires proof.
