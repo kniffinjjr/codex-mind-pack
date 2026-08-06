@@ -2,52 +2,56 @@
 
 This pack does **not** ship real project content. `Projects/` is the **canonical path** for any active project Codex (or you) creates while using this mind pack.
 
-## Path rule (binding for agents)
+## Pack root (read first)
 
-When starting or continuing project work under this pack:
+The mind pack root on the user’s machine is:
 
 ```text
-codex-mind-pack/Projects/<project-slug>/
+~/Documents/Codex/     # Windows: %USERPROFILE%\Documents\Codex\
+```
+
+**Not** the current project-chat folder (e.g. not `AI DEV/`). Agents must not nest the pack or `Projects/` under a chat workspace.
+
+## Path rule (binding for agents)
+
+```text
+Documents/Codex/Projects/<project-slug>/
 ```
 
 Examples:
 
 ```text
-Projects/acme-bom-export/
-Projects/internal-eco-scorecard/
-Projects/pdm-task-host-spike/
+Documents/Codex/Projects/acme-bom-export/
+Documents/Codex/Projects/configurator-dev/
+Documents/Codex/Projects/pdm-task-host-spike/
 ```
 
-**Do not** dump project residue into `core/`, `templates/`, `personalities/`, or the repo root.
+**Do not** dump project residue into `core/`, `templates/`, `personalities/`, the pack root, or a project-chat tree such as `AI DEV/docs/`.
 
 ## What belongs in a project folder
 
 | Keep here | Do not put here |
 |-----------|-----------------|
 | `Overview.md` — thin status + goals | Secrets, tokens, passwords |
-| `Nested-HLG.md` — grain map for this job | Customer PII or controlled data beyond policy |
-| Working notes, plans, residue, handoffs | Full copies of `core/` architecture (link instead) |
-| Local drafts, checklists, probe ledgers | Permanent methodology changes (those go to the private vault when available) |
+| `Nested-HLG.md` — grain map for this job | Customer PII beyond policy |
+| Working notes, plans, residue, handoffs | Full copies of `core/` (link instead) |
+| Local drafts, checklists, probe ledgers | The mind pack itself nested inside the project |
 
 ## How to start a project
 
-1. Copy the template:
+1. Ensure pack root is `Documents/Codex/`.
+2. Copy the template:
    ```bash
-   cp -R Projects/_template Projects/my-project-slug
+   cp -R ~/Documents/Codex/Projects/_template ~/Documents/Codex/Projects/my-project-slug
    ```
-2. Edit `Overview.md` and `Nested-HLG.md`.
-3. Put all mid-grain residue under that folder.
-4. Register a one-line entry in `Projects/_index.md`.
-
-## Work vs personal surfaces
-
-- **This pack (often on a work machine):** active project folders under `Projects/` — local git is fine; no requirement to push to GitHub.
-- **Private AI-Mind-Vault (personal):** thin project overviews and controlling methodology when GitHub is available.
-- Architecture stays aligned via `AGENTS.md` + `core/`; project *data* stays out of the public pack by design.
+3. Edit `Overview.md` and `Nested-HLG.md`.
+4. Put all mid-grain residue under that folder.
+5. Register a one-line entry in `Projects/_index.md`.
 
 ## Agent checklist
 
-- [ ] Active project path is `Projects/<slug>/`
+- [ ] Pack root is `Documents/Codex/` (not the project chat cwd)
+- [ ] Active project path is `Documents/Codex/Projects/<slug>/`
 - [ ] Overview + Nested-HLG exist before multi-step work
 - [ ] Residue stays inside that folder
 - [ ] No secrets committed
