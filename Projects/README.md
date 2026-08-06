@@ -1,58 +1,44 @@
 # Projects/ — where active work lives
 
-This pack does **not** ship real project content. `Projects/` is the **canonical path** for any active project Codex (or you) creates while using this mind pack.
+This pack does **not** ship real project content. Active projects go under **`PROJECTS_DIR`**.
 
-## Pack root (read first)
+## Resolve path first
 
-The mind pack root on the user’s machine is:
+1. If **`PATHS.md`** exists at pack root → use its `PROJECTS_DIR`.
+2. Else default: `{PACK_ROOT}/Projects` with `PACK_ROOT` = `~/Documents/Codex` (Windows: `%USERPROFILE%\Documents\Codex`).
+
+You may point `PROJECTS_DIR` at an **existing** projects tree you want to keep; architecture files still live under `PACK_ROOT`.
+
+See `PATHS.example.md` and `GIT.md`.
+
+## Path rule
 
 ```text
-~/Documents/Codex/     # Windows: %USERPROFILE%\Documents\Codex\
+{PROJECTS_DIR}/<project-slug>/
 ```
 
-**Not** the current project-chat folder (e.g. not `AI DEV/`). Agents must not nest the pack or `Projects/` under a chat workspace.
-
-## Path rule (binding for agents)
+Examples (default layout):
 
 ```text
-Documents/Codex/Projects/<project-slug>/
-```
-
-Examples:
-
-```text
-Documents/Codex/Projects/acme-bom-export/
 Documents/Codex/Projects/configurator-dev/
 Documents/Codex/Projects/pdm-task-host-spike/
 ```
 
-**Do not** dump project residue into `core/`, `templates/`, `personalities/`, the pack root, or a project-chat tree such as `AI DEV/docs/`.
+**Do not** put project residue in `core/`, `templates/`, `personalities/`, or a project-chat ad-hoc `docs/` tree.
 
-## What belongs in a project folder
+## Start a project
 
-| Keep here | Do not put here |
-|-----------|-----------------|
-| `Overview.md` — thin status + goals | Secrets, tokens, passwords |
-| `Nested-HLG.md` — grain map for this job | Customer PII beyond policy |
-| Working notes, plans, residue, handoffs | Full copies of `core/` (link instead) |
-| Local drafts, checklists, probe ledgers | The mind pack itself nested inside the project |
+```bash
+# defaults; substitute PROJECTS_DIR from PATHS.md if set
+cp -R "$PACK_ROOT/Projects/_template" "$PROJECTS_DIR/my-project-slug"
+```
 
-## How to start a project
-
-1. Ensure pack root is `Documents/Codex/`.
-2. Copy the template:
-   ```bash
-   cp -R ~/Documents/Codex/Projects/_template ~/Documents/Codex/Projects/my-project-slug
-   ```
-3. Edit `Overview.md` and `Nested-HLG.md`.
-4. Put all mid-grain residue under that folder.
-5. Register a one-line entry in `Projects/_index.md`.
+Edit `Overview.md` and `Nested-HLG.md`. Register a line in `_index.md`. Use **git** for history (`GIT.md`).
 
 ## Agent checklist
 
-- [ ] Pack root is `Documents/Codex/` (not the project chat cwd)
-- [ ] Active project path is `Documents/Codex/Projects/<slug>/`
-- [ ] Overview + Nested-HLG exist before multi-step work
-- [ ] Residue stays inside that folder
+- [ ] Read `PATHS.md` if present
+- [ ] Active path = `{PROJECTS_DIR}/<slug>/`
+- [ ] Overview + Nested-HLG before multi-step work
+- [ ] Residue stays in that folder
 - [ ] No secrets committed
-- [ ] `_index.md` updated with a one-line pointer
