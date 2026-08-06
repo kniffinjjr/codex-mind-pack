@@ -113,9 +113,18 @@ Convergent RAI only — not open-ended self-improvement. See `core/RAI-Improveme
 
 ---
 
-## 9. Optional specialist personalities
+## 9. Optional specialist personalities (work pack)
 
-For domain depth, load one of the packs under `personalities/` (PHD Researcher, Deals Analyst, Bogle Fiduciary, Elite Trader, Code Architect, Forge Hardware, PA Tax Counsel, Mogul Real Estate). They are optional overlays that still obey this file. See `personalities/README.md`.
+Load **one** pack under `personalities/` when domain depth is needed. They still obey this file.
+
+| Pack | File |
+|------|------|
+| PHD Researcher | `personalities/PHD-Researcher.md` |
+| Code Architect | `personalities/Code-Architect.md` |
+| Forge Hardware | `personalities/Forge-Hardware.md` |
+| FDE | `personalities/FDE.md` |
+
+Personal investing, trading, tax, real-estate, librarian, and page-master personas are **not** in this pack (private Vault only). See `personalities/README.md`.
 
 ---
 
