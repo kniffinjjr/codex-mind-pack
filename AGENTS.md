@@ -9,25 +9,41 @@ Full workflow detail lives in the private AI-Mind-Vault (`Methodology/Agent-Oper
 ## 0. Boot (every session)
 
 1. Obey this file.
-2. **Know the pack root:** this mind pack lives at `Documents/Codex/` on the user’s machine (`~/Documents/Codex/` or `%USERPROFILE%\Documents\Codex\`). It is **not** the current project-chat folder.
+2. **Resolve pack root:**
+   - If **`PATHS.md`** exists at the pack root → use `PACK_ROOT` and `PROJECTS_DIR` from it.
+   - Else defaults: `PACK_ROOT` = `~/Documents/Codex` (Windows: `%USERPROFILE%\Documents\Codex`); `PROJECTS_DIR` = `{PACK_ROOT}/Projects`.
+   - See `PATHS.example.md`. Never treat the current project-chat folder as pack home unless `PATHS.md` says so.
 3. Classify task (W1): domain skill? inner loop? mid graph? outer improve?
 4. Prefer existing notes over inventing principles.
 5. Externalize state as files. Done requires proof artifacts.
-6. **Active project work** belongs under `Documents/Codex/Projects/<project-slug>/` (see §11). Do not put project residue in `core/`, `templates/`, `personalities/`, or the pack root.
+6. **Active project work** belongs under `{PROJECTS_DIR}/<project-slug>/` (see §11).
 
 ---
 
-## 0b. Install / import location (binding)
+## 0b. Install / import location
 
-When cloning, pulling, or “importing” this pack:
+**Default root:** `Documents/Codex/`.
+
+**Remap:** copy `PATHS.example.md` → `PATHS.md` and set `PACK_ROOT` / `PROJECTS_DIR` to an existing structure you want to keep. `PATHS.md` is local-only (gitignored).
 
 | Do | Do not |
 |----|--------|
-| Put pack files at **`Documents/Codex/`** root | Nest under a project chat workspace (e.g. `AI DEV/codex-mind-pack/`) |
-| Create `Documents/Codex/` if missing | Treat the current chat/project cwd as the pack home |
-| Put active work in `Documents/Codex/Projects/<slug>/` | Scatter residue into ad-hoc `docs/` or duplicate trees inside the project chat |
+| Install architecture at `PACK_ROOT` | Nest under a random project-chat cwd without PATHS override |
+| Point `PROJECTS_DIR` at an existing projects tree if preferred | Scatter residue into ad-hoc `docs/` trees |
+| Use normal **git** (`GIT.md`) | Invent a non-git “mind sync” channel |
 
-**Project chat ≠ pack home.** A chat named “AI DEV” (or any other project) may *use* this mind; it must not *host* the pack tree unless the user explicitly overrides.
+**Project chat ≠ pack home** unless the user set `PACK_ROOT` to that path in `PATHS.md`.
+
+---
+
+## 0c. Git (traditional)
+
+Source of truth is **git**. Full workflow: **`GIT.md`**.
+
+- Clone / pull / branch / commit / push with standard commands.
+- Do not force-push `main` or commit secrets.
+- Do not push private `Projects/<slug>/` to the public origin unless the user asks.
+- Prefer `git status` / `diff` / `log` before destructive operations.
 
 ---
 
@@ -38,7 +54,7 @@ When cloning, pulling, or “importing” this pack:
 - **Graph** — explicit topology only when **Qualifying Test** is met.
 - **Eval** — score that **changes the next edge** (not a dashboard). Writer ≠ Checker. See `core/Eval-Engineering.md`.
 
-Nested grains: **Inner** (turn) ⊂ **Mid** (job/pipeline) ⊂ **Outer** (improve the system). Same seven loop fields at every grain. See `core/Nested-Cycles.md` and `core/Harness-Loop-Graph.md`.
+Nested grains: **Inner** ⊂ **Mid** ⊂ **Outer**. See `core/Nested-Cycles.md` and `core/Harness-Loop-Graph.md`.
 
 ---
 
@@ -46,20 +62,11 @@ Nested grains: **Inner** (turn) ⊂ **Mid** (job/pipeline) ⊂ **Outer** (improv
 
 **Qualifying Test** — multi-node graph only if several apply: multiple steps, independent sources, parallel paths, independent checks, material risk, required human approvals. Else better prompt + context.
 
-**Diamond (default research shape)**  
-Planner → parallel researchers → independent Skeptic → Merge → Human gate.
+**Diamond** — Planner → parallel researchers → independent Skeptic → Merge → Human gate.
 
-**Writer ≠ Checker** — do not grade your own output in the same context.
+**Writer ≠ Checker** · **Intentional Residue** · **Start Manual → Validate → Automate** · smallest graph · human gates where mistakes are expensive · **Done is a claim until proof.**
 
-**Intentional Residue** — every meaningful step leaves durable artifacts. Shared state is external memory.
-
-**Start Manual → Validate → Automate** — draw topology; run by hand once; then automate. Diagram geometry: `core/Diagram-Principles.md`.
-
-**Smallest graph** that improves quality. Human gates where mistakes are expensive.
-
-**Static vs dynamic** — stable pipeline = static graph; work that creates/cancels tasks mid-run = dynamic board.
-
-**Done is a claim until proof.**
+Diagram geometry: `core/Diagram-Principles.md`.
 
 ---
 
@@ -67,23 +74,19 @@ Planner → parallel researchers → independent Skeptic → Merge → Human gat
 
 | ID | Use |
 |----|-----|
-| **W1 Classify** | Skill vs inner vs mid vs outer before multi-step work |
-| **W2 Design** | New system: Harness → Loop → Qualifying Test → Graph → Checklist → manual run |
+| **W1 Classify** | Skill vs inner vs mid vs outer |
+| **W2 Design** | Harness → Loop → Qualifying Test → Graph → Checklist → manual run |
 | **W3 Execute** | Inner default; mid if qualified; residue each stage |
-| **W4 Diagnose** | Layer then grain; fix owner first; then model |
-| **W5 Handoff** | Pre-split test; Handoff artifact with ruled-out paths |
-| **W6 Improve** | Probe Suite / RAI outer loop only |
-| **W7 Mind change** | Explicit user direction; do not invent principles |
-
-Full steps live in the private vault when available. Offline: treat this table + the failure card as binding.
+| **W4 Diagnose** | Layer then grain |
+| **W5 Handoff** | Pre-split test; Handoff artifact |
+| **W6 Improve** | Probe Suite / RAI |
+| **W7 Mind change** | Explicit user direction |
 
 ---
 
-## 4. Cost & context (coding agents)
+## 4. Cost & context
 
-- Structural / blast-radius context over full-repo dumps.
-- Map once; inject the relevant slice.
-- Dual metric: quality **and** tokens/$ per successful task.
+Structural context over full-repo dumps. Dual metric: quality **and** tokens/$ per successful task.
 
 ---
 
@@ -96,41 +99,29 @@ Wrong order / skipped gate / bad merge → Graph
 Can't tell if improved → Outer residue / eval missing
 ```
 
-Then ask: **which grain?** Do not rewrite outer because inner lacked a stop.
+Ask: **which grain?**
 
 ---
 
-## 6. Handoff (no amnesia)
+## 6. Handoff
 
-Before a second agent: pre-split test. If they need most of your context, do not split.
-
-Handoff must include: Intent · Decisions · Artifacts by ref · **Ruled-out paths** · Open questions · Next action as receiver spec. See `templates/Handoff-Artifact.md`.
+Intent · Decisions · Artifacts by ref · **Ruled-out paths** · Open questions · Next action. See `templates/Handoff-Artifact.md`.
 
 ---
 
 ## 7. RAI / Improvement
 
-1. Treat this AGENTS.md (+ project instructions) as fixed **spec**
-2. Run Probe Suite (`templates/Probe-Suite.md`) derived from real failures
-3. One lever per failure; re-run until PASS
-4. Leave Probe Ledger as residue
-
-Convergent RAI only — not open-ended self-improvement. See `core/RAI-Improvement.md` and `core/Eval-Engineering.md`.
+Spec = this file. Run Probe Suite; one lever per failure; leave ledger. See `core/RAI-Improvement.md`, `core/Eval-Engineering.md`.
 
 ---
 
 ## 8. Offline / no private vault
 
-1. This AGENTS.md is the complete portable mind.
-2. Externalize intermediate state under `Documents/Codex/Projects/<slug>/` when the work is a project.
-3. Separate generation from verification.
-4. Request missing controlling excerpts; do not invent a new architecture.
+This AGENTS.md is the portable mind. State under `{PROJECTS_DIR}/<slug>/`. Do not invent a new architecture.
 
 ---
 
 ## 9. Optional specialist personalities (work pack)
-
-Load **one** pack under `personalities/` when domain depth is needed. They still obey this file.
 
 | Pack | File |
 |------|------|
@@ -139,36 +130,33 @@ Load **one** pack under `personalities/` when domain depth is needed. They still
 | Forge Hardware | `personalities/Forge-Hardware.md` |
 | FDE | `personalities/FDE.md` |
 
-Personal investing, trading, tax, real-estate, librarian, and page-master personas are **not** in this pack (private Vault only). See `personalities/README.md`.
+Personal investing, trading, tax, real-estate, librarian, page-master: **not** in this pack.
 
 ---
 
 ## 10. When in doubt
 
-1. Externalize state under the correct root (`Documents/Codex/`)
-2. Separate generation from verification
-3. Prefer smallest viable topology
-4. Human gate at irreversible steps
-5. Ask which **grain** failed before rewriting the system
+1. Resolve `PATHS.md` / defaults, then externalize under that root  
+2. Separate generation from verification  
+3. Smallest viable topology  
+4. Human gate at irreversible steps  
+5. Which **grain** failed?  
+6. Use **git** (`GIT.md`), not ad-hoc file copies for pack updates  
 
 ---
 
-## 11. Active projects path (binding)
-
-Pack root: **`Documents/Codex/`**. Active projects:
+## 11. Active projects path
 
 ```text
-Documents/Codex/Projects/<project-slug>/
+{PROJECTS_DIR}/<project-slug>/
 ```
 
-**Rules:**
+Default `PROJECTS_DIR` = `{PACK_ROOT}/Projects`. Override in `PATHS.md` if you already have a projects tree.
 
-1. Start from `Projects/_template/` → copy to `Projects/<slug>/` under the pack root.
-2. Maintain `Overview.md` and `Nested-HLG.md` in that folder.
-3. Keep all mid-grain residue inside `Projects/<slug>/`.
-4. Register a one-line entry in `Projects/_index.md`.
-5. Never commit secrets. Never write project files into `core/`, `templates/`, or `personalities/`.
-6. Never install the pack tree under a project-chat directory.
-7. Full path rules: `Projects/README.md`.
+1. Copy `{PROJECTS_DIR}/_template` → `{PROJECTS_DIR}/<slug>/` (template ships under pack `Projects/_template`).
+2. Maintain Overview + Nested-HLG.
+3. Residue stays in that folder.
+4. Register in `Projects/_index.md` (or the index beside your custom `PROJECTS_DIR`).
+5. No secrets in git. See `Projects/README.md`, `.gitignore`, `GIT.md`.
 
 Adhere strictly. Evidence over confidence. Writer ≠ Checker. Done requires proof.
