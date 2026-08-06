@@ -1,12 +1,12 @@
 # codex-mind-pack
 
-**Portable AI Mind pack optimized for OpenAI Codex** (and Claude Code / other agents).
+**Portable AI Mind pack optimized for OpenAI Codex and GPT-based agents** (also usable with Claude Code and other coding agents).
 
-This repository packages the durable core of our AI Mind (Harness · Loop · Graph architecture + Graph Engineering principles + RAI improvement discipline) in a form that Codex can reliably follow even without access to private vaults or full GitHub context.
+This repository packages the durable core of the AI Mind (Harness · Loop · Graph architecture + Graph Engineering principles + RAI improvement discipline + Nested Cycles) in a form that Codex / GPT agents can reliably follow even without access to private vaults or full GitHub context.
 
-Clone it tomorrow on your work computer and use it as working context or the source of your `AGENTS.md`.
+Clone it and use it as working context or the source of your `AGENTS.md`.
 
-## Quick Start (Tomorrow on Work Computer)
+## Quick Start
 
 ```bash
 git clone https://github.com/kniffinjjr/codex-mind-pack.git
@@ -23,19 +23,19 @@ Then choose one (or both):
 
 2. **Per-project** (put the whole pack or just AGENTS.md into the root of the work repo):
    ```bash
-   cp AGENTS.md /path/to/your/work-repo/
+   cp AGENTS.md /path/to/your-work-repo/
    # or work inside this directory for mind-aligned sessions
    ```
 
-3. **Context injection**: In Codex sessions, `@` mention files from this pack (especially `AGENTS.md`, `core/`, and `templates/Probe-Suite.md`).
+3. **Context injection**: In Codex / GPT sessions, `@` mention files from this pack (especially `AGENTS.md`, `core/`, and `templates/Probe-Suite.md`).
 
-## What Codex Gets From This Pack
+## What This Pack Provides
 
-- **AGENTS.md** — high-priority durable instructions Codex is trained to follow.
-- Core Harness · Loop · Graph mental model.
+- **AGENTS.md** — high-priority durable instructions agents are trained to follow.
+- Core Harness · Loop · Graph mental model + Nested Cycles (Inner ⊂ Mid ⊂ Outer).
 - Concrete Graph Engineering rules (Qualifying Test, Diamond Pattern, Writer ≠ Checker, Intentional Residue).
-- **RAI Improvement Loop** + starter **Probe Suite** so you can harden agents (or the pack itself) before deploy.
-- Ready templates for planning and residual state.
+- **RAI Improvement Loop** + starter **Probe Suite** (including handoff / negative-space probes) so you can harden agents (or the pack itself) before deploy.
+- Ready templates for planning, residue, and handoffs.
 
 ## Structure
 
@@ -45,20 +45,21 @@ codex-mind-pack/
 ├── README.md                          # This file
 ├── LICENSE
 ├── core/
-│   ├── Harness-Loop-Graph.md          # Condensed architecture
-│   ├── Graph-Principles.md            # Operational rules (Qualifying Test, Diamond, Residue...)
-│   └── RAI-Improvement.md             # Convergent improvement loop (RAI)
+│   ├── Harness-Loop-Graph.md          # Condensed architecture + Nested Cycles
+│   ├── Graph-Principles.md            # Operational rules
+│   └── RAI-Improvement.md             # Convergent improvement loop
 ├── templates/
 │   ├── Diamond-Research.md
 │   ├── Graph-Engineering-Template.md
 │   ├── Residue-Structure.md
-│   ├── RAI-Loop.md                    # Executable improvement steps
-│   └── Probe-Suite.md                 # Starter probes + LEDGER
+│   ├── Handoff-Artifact.md
+│   ├── RAI-Loop.md
+│   └── Probe-Suite.md                 # Starter probes + LEDGER (incl. P11/P12)
 └── examples/
     └── (future worked examples)
 ```
 
-## Recommended Codex Workflow
+## Recommended Codex / GPT Workflow
 
 1. Start complex tasks in **plan mode** and write the topology (or Diamond) as files first.
 2. Force **intentional residue**: every meaningful step writes durable artifacts (PLAN.md, EVIDENCE.md, STATUS.md, etc.).
@@ -69,6 +70,24 @@ codex-mind-pack/
 
 ## Relationship to Full AI-Mind-Vault
 
-This is the *portable, Codex-facing surface* of the private `AI-Mind-Vault`. The vault remains the source of truth for deeper concepts, projects, skills, and review process. Keep this pack in sync when major principles change.
+This is the *portable, Codex/GPT-facing surface* of the private AI-Mind-Vault. The vault remains the source of truth for deeper concepts, projects, skills, and the review process. Keep this pack in sync when major principles change.
 
-Created 2026-08-03 / 2026-08-04 for reliable agentic work. Updated with RAI + Probe Suite the same day.
+**Naming policy (this pack only):** All agent/platform references use GPT / Codex framing. No Grok-prefixed agent names are carried into this public surface.
+
+## Regular Update Policy
+
+- **Last synced from AI-Mind-Vault:** 2026-08-06
+- **Trigger a re-sync when:** AGENTS.md, Nested-Cycles, Graph Principles, RAI, Probe Suite, or Handoff Spec change in the private vault.
+- **Owner action:** Ask GrokRarian (or any agent with vault access) to “sync codex-mind-pack” after those controlling documents are updated and approved.
+- **This pack never auto-pulls.** All updates are intentional pushes so the portable surface stays deliberate and reviewable.
+
+## Changelog (pack)
+
+### 2026-08-06
+- Full sync of portable rules from vault (Nested Cycles, full W table, cost policy, offline rules).
+- GPT / Codex rebrand applied to all platform/agent references in this pack only.
+- Probe Suite expanded with handoff / negative-space probes (P11, P12).
+- Handoff template tightened; core files refreshed.
+- Explicit regular-update policy added to README.
+
+Created 2026-08-03 / 2026-08-04. Maintained as the reliable GPT/Codex surface of the AI Mind.

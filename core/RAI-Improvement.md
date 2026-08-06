@@ -1,6 +1,6 @@
-# Recursive Auto-Improvement (RAI) — Practical Subset for Codex
+# Recursive Auto-Improvement (RAI) — Practical Subset for Codex / GPT Agents
 
-**Source:** Ashpreet Bedi / Agno (2026-08-03) mapped to our Harness · Loop · Graph architecture.
+**Source pattern:** Convergent improvement against a fixed written spec (mapped from production agent practice).
 
 ## Core Distinction
 
@@ -12,7 +12,7 @@ We adopt **RAI**.
 ## The Practical Loop (Codex-ready)
 
 1. Treat `AGENTS.md` + core files as the written **spec**.
-2. Derive or load probes (Golden / Edge / Tool-Residue / Adversarial) with one-line expected behavior.
+2. Derive or load probes (Golden / Edge / Tool-Residue / Handoff / Adversarial) with one-line expected behavior.
 3. Run the probes against the current agent behavior or proposed change.
 4. Review outcomes + any available traces/logs.
 5. Make small targeted edits (usually to instructions or supporting files).

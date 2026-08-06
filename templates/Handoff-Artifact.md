@@ -4,13 +4,21 @@
 
 A prose summary of what Agent A learned is not usable evidence for Agent B. The only durable handoff is structured residue that carries artifacts and the negative space (what was tried and rejected).
 
+## Pre-split test (cheapest fix)
+
+Before creating a second agent, ask:
+
+> What does the second agent actually need to have seen?
+
+If the answer is most of what the first agent saw → **do not split**. You have one agent + expensive amnesia.
+
 ## Required Fields
 
 ```markdown
 ## Handoff — [Task / Stage ID]
 
 ### 1. Original Goal / Intent
-[What the upstream agent was trying to achieve]
+[What the upstream agent was trying to achieve — do not silently reinterpret]
 
 ### 2. Decisions Made + Rationale
 - Decision: …
@@ -40,7 +48,7 @@ A prose summary of what Agent A learned is not usable evidence for Agent B. The 
 1. **Prefer artifacts by reference** over large inline content. Point to files, schemas, captured responses, or IDs in shared state.
 2. **Negative space is mandatory.** Explicitly record what failed or was ruled out. This is the part that stops the next agent from re-paying the same cost.
 3. **Write for the next agent, not a human.** A report optimizes for narrative; a handoff optimizes for actionability and completeness of evidence.
-4. **Pre-split test.** Before introducing a second agent, ask: “What does the second agent actually need to have seen?” If the answer is most of what the first saw, do not split — you have one agent + expensive amnesia.
+4. **Pre-split test.** Before introducing a second agent, ask: “What does the second agent actually need to have seen?” If the answer is most of what the first saw, do not split.
 5. Prefer shared durable state (filesystem, typed graph state, checkpointer) + a compact structured envelope over one-shot prose handoffs.
 
 ## Relation to Core Principles

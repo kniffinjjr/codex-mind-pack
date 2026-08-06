@@ -2,6 +2,8 @@
 
 **Purpose:** Reliable production AI agents by correctly distinguishing the three layers.
 
+Mental model: **Environment → Feedback → Flow**
+
 ## 1. Agent Harness Engineering
 Everything outside the model: system/context, tools, memory/files, sandboxes, routing, permissions, logging, verification interfaces, observability.
 
@@ -30,6 +32,29 @@ Answers: which component may run next?
 
 Use graphs for branches, parallel work, approvals, recovery, multi-agent coordination. Skip when one agent + tools is enough.
 
+## Nested Cycles (grains)
+
+```
+OUTER  (meta / improvement)
+  RAI · ops review · probe suite batch
+  └── evidence = Probe Ledger, metrics, residue diffs
+        │
+MID    (job / workflow)
+  Graph stages or single qualified loop
+  └── each node is an inner loop (or human gate)
+        │
+INNER  (agent turn)
+  model → tools → observe → stop on evidence
+  └── harness supplies tools, state, budgets, gates
+```
+
+Same seven loop fields at every grain. Declare grain on every filled loop: `Grain: inner | mid | outer`.
+
+Promotion rules:
+- Single inner loop → Mid graph only when Qualifying Test is met
+- Mid → Dynamic board when work discovers/cancels tasks mid-run
+- Ad-hoc mid → Outer RAI when a written spec + Probe Suite is needed
+
 ## How the layers nest
 ```
 Harness
@@ -46,6 +71,8 @@ Harness
 | No success criteria / unbounded retry / “keep trying” | Loop |
 | Wrong order / missing branches / no human gates | Graph |
 | Cannot attribute improvement | Evaluation (cross-cutting) |
+
+Always also ask: **which grain failed?** Do not rewrite outer because an inner loop lacked a stop rule.
 
 ## Expensive Mistakes to Avoid
 1. Graph before understanding the work
