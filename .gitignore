@@ -1,0 +1,40 @@
+# Local path map (machine-specific)
+PATHS.md
+
+# Secrets and env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials.json
+secrets/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# Python / Node local noise (if tools run inside pack root)
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+dist/
+build/
+
+# Optional: uncomment to keep all active projects local-only (never push to public origin)
+# Projects/*/
+# !Projects/_template/
+# !Projects/_index.md
+# !Projects/README.md
+
+# Logs and temp
+*.log
+tmp/
+.temp/
