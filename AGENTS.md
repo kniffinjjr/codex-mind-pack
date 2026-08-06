@@ -9,10 +9,25 @@ Full workflow detail lives in the private AI-Mind-Vault (`Methodology/Agent-Oper
 ## 0. Boot (every session)
 
 1. Obey this file.
-2. Classify task (W1): domain skill? inner loop? mid graph? outer improve?
-3. Prefer existing notes over inventing principles.
-4. Externalize state as files. Done requires proof artifacts.
-5. **Active project work** belongs under `Projects/<project-slug>/` (see §11). Do not put project residue in `core/`, `templates/`, `personalities/`, or the repo root.
+2. **Know the pack root:** this mind pack lives at `Documents/Codex/` on the user’s machine (`~/Documents/Codex/` or `%USERPROFILE%\Documents\Codex\`). It is **not** the current project-chat folder.
+3. Classify task (W1): domain skill? inner loop? mid graph? outer improve?
+4. Prefer existing notes over inventing principles.
+5. Externalize state as files. Done requires proof artifacts.
+6. **Active project work** belongs under `Documents/Codex/Projects/<project-slug>/` (see §11). Do not put project residue in `core/`, `templates/`, `personalities/`, or the pack root.
+
+---
+
+## 0b. Install / import location (binding)
+
+When cloning, pulling, or “importing” this pack:
+
+| Do | Do not |
+|----|--------|
+| Put pack files at **`Documents/Codex/`** root | Nest under a project chat workspace (e.g. `AI DEV/codex-mind-pack/`) |
+| Create `Documents/Codex/` if missing | Treat the current chat/project cwd as the pack home |
+| Put active work in `Documents/Codex/Projects/<slug>/` | Scatter residue into ad-hoc `docs/` or duplicate trees inside the project chat |
+
+**Project chat ≠ pack home.** A chat named “AI DEV” (or any other project) may *use* this mind; it must not *host* the pack tree unless the user explicitly overrides.
 
 ---
 
@@ -107,7 +122,7 @@ Convergent RAI only — not open-ended self-improvement. See `core/RAI-Improveme
 ## 8. Offline / no private vault
 
 1. This AGENTS.md is the complete portable mind.
-2. Externalize intermediate state as local files under `Projects/<slug>/` when the work is a project.
+2. Externalize intermediate state under `Documents/Codex/Projects/<slug>/` when the work is a project.
 3. Separate generation from verification.
 4. Request missing controlling excerpts; do not invent a new architecture.
 
@@ -130,7 +145,7 @@ Personal investing, trading, tax, real-estate, librarian, and page-master person
 
 ## 10. When in doubt
 
-1. Externalize state
+1. Externalize state under the correct root (`Documents/Codex/`)
 2. Separate generation from verification
 3. Prefer smallest viable topology
 4. Human gate at irreversible steps
@@ -140,19 +155,20 @@ Personal investing, trading, tax, real-estate, librarian, and page-master person
 
 ## 11. Active projects path (binding)
 
-This pack **does not contain real projects**. It defines where agents must put them:
+Pack root: **`Documents/Codex/`**. Active projects:
 
 ```text
-Projects/<project-slug>/
+Documents/Codex/Projects/<project-slug>/
 ```
 
 **Rules:**
 
-1. Start from `Projects/_template/` → copy to `Projects/<slug>/`.
+1. Start from `Projects/_template/` → copy to `Projects/<slug>/` under the pack root.
 2. Maintain `Overview.md` and `Nested-HLG.md` in that folder.
 3. Keep all mid-grain residue inside `Projects/<slug>/`.
 4. Register a one-line entry in `Projects/_index.md`.
 5. Never commit secrets. Never write project files into `core/`, `templates/`, or `personalities/`.
-6. Full path rules: `Projects/README.md`.
+6. Never install the pack tree under a project-chat directory.
+7. Full path rules: `Projects/README.md`.
 
 Adhere strictly. Evidence over confidence. Writer ≠ Checker. Done requires proof.
