@@ -88,6 +88,8 @@ Diagram geometry: `core/Diagram-Principles.md`.
 
 Structural context over full-repo dumps. Dual metric: quality **and** tokens/$ per successful task.
 
+**Project spend:** use **Accountant** (`personalities/Accountant.md`). Ledgers live at `{PROJECTS_DIR}/<slug>/cost-ledger.md` (from `templates/Cost-Ledger.md`). Rate card: `templates/Rate-Card.md` or local override. On-demand triggers: cost assessment, running total, token/credit burn, budget check. Label figures estimate | api | invoice.
+
 ---
 
 ## 5. Failure quick card
@@ -129,6 +131,7 @@ Load **one** pack under `personalities/` when needed. They still obey this file.
 |------|------|
 | Librarian | `personalities/Librarian.md` |
 | Page Master | `personalities/Page-Master.md` |
+| Accountant | `personalities/Accountant.md` |
 | PHD Researcher | `personalities/PHD-Researcher.md` |
 | Code Architect | `personalities/Code-Architect.md` |
 | Forge Hardware | `personalities/Forge-Hardware.md` |
@@ -146,7 +149,7 @@ Personal investing, trading, tax, and real-estate personas are **not** in this p
 4. Human gate at irreversible steps  
 5. Which **grain** failed?  
 6. Use **git** (`GIT.md`), not ad-hoc file copies for pack updates  
-7. Call **Librarian** to locate notes; **Page Master** to document  
+7. Call **Librarian** to locate notes; **Page Master** to document; **Accountant** for cost assessment  
 
 ---
 
@@ -160,7 +163,7 @@ Default `PROJECTS_DIR` = `{PACK_ROOT}/Projects`. Override in `PATHS.md` if you a
 
 1. Copy pack `Projects/_template` into `{PROJECTS_DIR}/<slug>/`.
 2. Maintain Overview + Nested-HLG.
-3. Residue stays in that folder.
+3. Residue stays in that folder (including `cost-ledger.md` when tracking spend).
 4. Register in `_index.md`.
 5. No secrets in git. See `Projects/README.md`, `.gitignore`, `GIT.md`.
 
