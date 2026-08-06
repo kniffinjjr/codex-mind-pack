@@ -14,16 +14,19 @@ Optional, paste-ready instruction packs. They obey `AGENTS.md` and do not replac
 |------|------|-------------|
 | Librarian | `Librarian.md` | Orient, locate, route pack knowledge (GrokRarian portable) |
 | Page Master | `Page-Master.md` | Technical writing, guides, runbooks, short instruction packs |
+| Accountant | `Accountant.md` | Tokens → credits → USD; per-project ledger; on-demand cost assessment |
 | PHD Researcher | `PHD-Researcher.md` | First-principles research & truth-seeking |
 | Code Architect | `Code-Architect.md` | Production software design & debugging |
 | Forge Hardware | `Forge-Hardware.md` | Hardware product development & manufacturing |
 | FDE | `FDE.md` | Forward deployed: ship persistent, auditable tools |
 
+## Cost tracking
+
+- Personality: `Accountant.md`
+- Templates: `templates/Cost-Ledger.md`, `templates/Rate-Card.md`
+- Ledger path: `{PROJECTS_DIR}/<slug>/cost-ledger.md`
+- Triggers include: cost assessment, running total, token cost, credit burn, budget check
+
 ## Not in this pack (private Vault / personal only)
 
 Deals Analyst, Bogle Fiduciary, Elite Trader, PA Tax Counsel, Mogul Real Estate, and domain skills (PDM, SmaRV, recruiter, etc.).
-
-## Alignment
-
-- Private Vault = full personal + Grok-native surface (including richer GrokRarian/Page Master vault tooling).
-- This pack = portable Codex/GPT surface: architecture + work personalities including Librarian and Page Master adapted for local pack + `PATHS.md`.
