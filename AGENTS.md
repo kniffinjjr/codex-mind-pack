@@ -13,6 +13,7 @@ Full workflow detail lives in the private AI-Mind-Vault (`Methodology/Agent-Oper
    - If **`PATHS.md`** exists at the pack root → use `PACK_ROOT` and `PROJECTS_DIR` from it.
    - Else defaults: `PACK_ROOT` = `~/Documents/Codex` (Windows: `%USERPROFILE%\Documents\Codex`); `PROJECTS_DIR` = `{PACK_ROOT}/Projects`.
    - See `PATHS.example.md`. Never treat the current project-chat folder as pack home unless `PATHS.md` says so.
+   - **Path confusion or cold start → activate Librarian** (`personalities/Librarian.md`). Librarian owns path orientation; other agents read the same map and do not invent roots.
 3. Classify task (W1): domain skill? inner loop? mid graph? outer improve?
 4. Prefer existing notes over inventing principles.
 5. Externalize state as files. Done requires proof artifacts.
@@ -31,6 +32,7 @@ Full workflow detail lives in the private AI-Mind-Vault (`Methodology/Agent-Oper
 | Install architecture at `PACK_ROOT` | Nest under a random project-chat cwd without PATHS override |
 | Point `PROJECTS_DIR` at an existing projects tree if preferred | Scatter residue into ad-hoc `docs/` trees |
 | Use normal **git** (`GIT.md`) | Invent a non-git “mind sync” channel |
+| Let **Librarian** state roots when unclear | Guess a third root mid-session |
 
 **Project chat ≠ pack home** unless the user set `PACK_ROOT` to that path in `PATHS.md`.
 
@@ -99,6 +101,8 @@ Structural context over full-repo dumps. Dual metric: quality **and** tokens/$ p
 
 **Project spend:** use **Accountant** (`personalities/Accountant.md`). Ledgers live at `{PROJECTS_DIR}/<slug>/cost-ledger.md` (from `templates/Cost-Ledger.md`). Rate card: `templates/Rate-Card.md` or local override. On-demand triggers: cost assessment, running total, token/credit burn, budget check. Label figures estimate | api | invoice.
 
+**Efficiency rule:** every cost assessment must check whether the same or **higher** quality could be achieved cheaper (model tier, cache, context hygiene, less tool noise). Never recommend quality-blind cuts without stating the trade-off.
+
 ---
 
 ## 5. Failure quick card
@@ -108,6 +112,7 @@ Missing capability / lost state / no audit → Harness
 Unbounded retry / no evidence / self-grade → Loop
 Wrong order / skipped gate / bad merge → Graph
 Can't tell if improved → Outer residue / eval missing
+Wrong folder / invented root → PATHS / Librarian
 ```
 
 Ask: **which grain?**
@@ -128,7 +133,7 @@ Spec = this file. Run Probe Suite; one lever per failure; leave ledger. See `cor
 
 ## 8. Offline / no private vault
 
-This AGENTS.md is the portable mind. State under `{PROJECTS_DIR}/<slug>/`. Do not invent a new architecture. Use **Librarian** to orient against pack files when context is thin.
+This AGENTS.md is the portable mind. State under `{PROJECTS_DIR}/<slug>/`. Do not invent a new architecture. Use **Librarian** to orient against pack files and **PATHS** when context is thin.
 
 ---
 
@@ -152,13 +157,13 @@ Personal investing, trading, tax, and real-estate personas are **not** in this p
 
 ## 10. When in doubt
 
-1. Resolve `PATHS.md` / defaults, then externalize under that root  
+1. Resolve `PATHS.md` / defaults (or call **Librarian**), then externalize under that root  
 2. Separate generation from verification  
 3. Smallest viable topology  
 4. Human gate at irreversible steps  
 5. Which **grain** failed?  
 6. Use **git** (`GIT.md`), not ad-hoc file copies for pack updates  
-7. Call **Librarian** to locate notes; **Page Master** to document; **Accountant** for cost assessment  
+7. Call **Librarian** to locate notes and roots; **Page Master** to document; **Accountant** for cost assessment (including cheaper@≥quality)  
 8. Vault permanent change? → REVIEW_QUEUE + wait for user approval — never auto-commit  
 
 ---

@@ -49,19 +49,21 @@ Each entry should include when known:
 
 When triggered:
 
-1. Resolve `PATHS.md` → `PACK_ROOT`, `PROJECTS_DIR`; identify `<slug>` (ask if ambiguous).
+1. Resolve `PATHS.md` → `PACK_ROOT`, `PROJECTS_DIR` (if path layout is unclear, call **Librarian**); identify `<slug>` (ask if ambiguous).
 2. Load `cost-ledger.md` + rate card.
 3. If admin/usage data is available and user wants refresh: pull or instruct pull from Costs/Usage API or CSV export; merge as `api`/`export` rows.
 4. Recompute running totals; flag budget thresholds if `budget_usd` / `budget_credits` set in ledger header or Overview.
-5. Report: period spend, all-time running total, burn rate (per day/session if data allows), top cost drivers (model/task), data quality gaps.
-6. Write assessment residue: append a dated `## Assessment YYYY-MM-DD` section or update summary fields in the ledger — do not delete prior rows.
+5. **Efficiency check (required):** ask whether the same or **higher** quality outcome could have been achieved cheaper — model tiering, prefix/cache hits, context hygiene, less tool noise, batching, routing routine steps off frontier models. Flag concrete opportunities with estimated savings. **Never** recommend quality-blind cuts without stating the quality trade-off explicitly. Cost is a dual metric with quality, not a substitute for it.
+6. Report: period spend, all-time running total, burn rate (per day/session if data allows), top cost drivers (model/task), **cheaper@≥quality opportunities**, data quality gaps.
+7. Write assessment residue: append a dated `## Assessment YYYY-MM-DD` section or update summary fields in the ledger — do not delete prior rows.
 
 ## Rules
 
 - Obey `AGENTS.md`. Residue under project folder only.
+- Resolve paths via `PATHS.md` / defaults; do not invent a third root. Path orientation disputes → **Librarian**.
 - No secrets (API keys) in the ledger; reference env var names only.
 - Writer ≠ Checker: for finance decisions or invoice reconciliation, present figures and recommend human/finance review.
-- Dual metric: quality of work **and** cost per successful task when the user asks for efficiency.
+- Dual metric: quality of work **and** cost per successful task; prefer cheaper paths only when quality is maintained or improved.
 
 ## Response skeleton
 
@@ -70,4 +72,5 @@ When triggered:
 3. This assessment delta (if logging a session)
 4. Drivers / anomalies
 5. Budget status
-6. Data gaps + next actions (e.g. export CSV, set rate-card override)
+6. **Cheaper @ ≥ same quality** (opportunities + estimated savings, or “none material”)
+7. Data gaps + next actions (e.g. export CSV, set rate-card override)

@@ -21,6 +21,8 @@ Public, work-safe surface of the private AI-Mind-Vault: same Harness · Loop · 
 
 **Do not** nest this pack under a project-chat folder (e.g. `AI DEV/codex-mind-pack/`) unless you deliberately set that path in `PATHS.md`.
 
+**Librarian** owns path orientation (`PATHS.md` / defaults). Other agents read the same map; they do not invent a third root.
+
 ---
 
 ## Remap if you already have a structure
@@ -30,6 +32,7 @@ Public, work-safe surface of the private AI-Mind-Vault: same Harness · Loop · 
    - `PACK_ROOT` — where architecture files live
    - `PROJECTS_DIR` — where active projects live (may be outside `PACK_ROOT`)
 3. Agents read `PATHS.md` when present; otherwise use Documents/Codex defaults.
+4. On path confusion, activate **Librarian**.
 
 Details: **`PATHS.example.md`**.
 
@@ -80,16 +83,22 @@ Agents must not auto-commit to the Vault. Pack work stays in this repo (or local
 
 ## Agent install rules (short)
 
-1. Resolve `PATHS.md` → else `Documents/Codex`.
+1. Resolve `PATHS.md` → else `Documents/Codex` (Librarian on confusion).
 2. Write architecture under `PACK_ROOT`.
 3. Write active work under `PROJECTS_DIR/<slug>/`.
 4. Project chat ≠ pack home unless PATHS says so.
 5. Use git per `GIT.md`.
 6. **Vault permanent edits → REVIEW_QUEUE + user approval only.**
+7. Accountant assessments include **cheaper @ ≥ same quality** checks.
 
 ---
 
 ## Changelog
+
+### 2026-08-07 (Accountant + PATHS)
+- Accountant: required **cheaper@≥quality** efficiency check on every assessment.
+- PATHS / Librarian: explicit ownership of path orientation; agents must not invent third roots.
+- AGENTS §0 / §4 / failure card / README aligned.
 
 ### 2026-08-07
 - `GIT.md` expanded: hard separation from private AI-Mind-Vault; permanent Vault changes require user approval via REVIEW_QUEUE.
