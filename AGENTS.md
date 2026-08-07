@@ -36,14 +36,23 @@ Full workflow detail lives in the private AI-Mind-Vault (`Methodology/Agent-Oper
 
 ---
 
-## 0c. Git (traditional)
+## 0c. Git (traditional) + Vault approval gate
 
-Source of truth is **git**. Full workflow: **`GIT.md`**.
+Source of truth for **this pack** is **git**. Full workflow: **`GIT.md`**.
 
 - Clone / pull / branch / commit / push with standard commands.
 - Do not force-push `main` or commit secrets.
 - Do not push private `Projects/<slug>/` to the public origin unless the user asks.
 - Prefer `git status` / `diff` / `log` before destructive operations.
+
+**Private AI-Mind-Vault is a different repo with a different gate:**
+
+- Permanent changes to Vault controlling docs (`Concepts/`, `Methodology/`, Vault `AGENTS.md`, live Skills/, etc.) require **explicit user approval** (REVIEW_QUEUE → user approve → CHANGELOG / APPROVAL_LOG).
+- Agents may freely draft in Vault `Drafts/` or propose in `_meta/REVIEW_QUEUE.md`.
+- Agents must **never** auto-commit or push permanent Vault files.
+- Pack commits are not Vault commits. Sync is Vault → pack only after user-directed pack updates.
+
+See `GIT.md` section “Hard rule: AI-Mind-Vault vs this pack”.
 
 ---
 
@@ -80,7 +89,7 @@ Diagram geometry: `core/Diagram-Principles.md`.
 | **W4 Diagnose** | Layer then grain |
 | **W5 Handoff** | Pre-split test; Handoff artifact |
 | **W6 Improve** | Probe Suite / RAI |
-| **W7 Mind change** | Explicit user direction |
+| **W7 Mind change** | Explicit user direction; Vault permanent edits via REVIEW_QUEUE only |
 
 ---
 
@@ -150,6 +159,7 @@ Personal investing, trading, tax, and real-estate personas are **not** in this p
 5. Which **grain** failed?  
 6. Use **git** (`GIT.md`), not ad-hoc file copies for pack updates  
 7. Call **Librarian** to locate notes; **Page Master** to document; **Accountant** for cost assessment  
+8. Vault permanent change? → REVIEW_QUEUE + wait for user approval — never auto-commit  
 
 ---
 
