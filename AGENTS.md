@@ -33,8 +33,11 @@ Full workflow detail lives in the private AI-Mind-Vault (`Methodology/Agent-Oper
 | Point `PROJECTS_DIR` at an existing projects tree if preferred | Scatter residue into ad-hoc `docs/` trees |
 | Use normal **git** (`GIT.md`) | Invent a non-git “mind sync” channel |
 | Let **Librarian** state roots when unclear | Guess a third root mid-session |
+| Route skills via `Skills/Agent-Skill-Map.md` | Maintain a parallel root `SKILLS.md` as source of truth |
 
 **Project chat ≠ pack home** unless the user set `PACK_ROOT` to that path in `PATHS.md`.
+
+**Legacy skill catalogs:** If root or project `SKILLS.md` / `skills.md` files exist, consolidate per `Skills/Relocate-Consolidate.md` (do not dual-maintain).
 
 ---
 
@@ -114,6 +117,7 @@ Unbounded retry / no evidence / self-grade → Loop
 Wrong order / skipped gate / bad merge → Graph
 Can't tell if improved → Outer residue / eval missing
 Wrong folder / invented root → PATHS / Librarian
+Parallel SKILLS.md vs map → Relocate-Consolidate
 ```
 
 Ask: **which grain?**
@@ -155,7 +159,9 @@ Load **one** pack under `personalities/` when needed. They still obey this file.
 | Forge Hardware | `personalities/Forge-Hardware.md` |
 | FDE | `personalities/FDE.md` |
 
-**Skill routing:** `Skills/Agent-Skill-Map.md` — which operational skill backs which personality, plus web design / implement clusters. Personality ≠ skill. Personal investing, trading, tax, and real-estate surfaces stay private Vault only. See `personalities/README.md` and `Skills/README.md`.
+**Skill routing:** `Skills/Agent-Skill-Map.md`.  
+**Legacy catalogs:** `Skills/Relocate-Consolidate.md` — discover, classify, merge, tombstone existing `SKILLS.md` files; optional `SKILLS_RUNTIME` in `PATHS.md` for local skill bodies.  
+Personality ≠ skill. Personal investing, trading, tax, and real-estate surfaces stay private Vault only. See `personalities/README.md` and `Skills/README.md`.
 
 ---
 
@@ -170,6 +176,7 @@ Load **one** pack under `personalities/` when needed. They still obey this file.
 7. Call **Librarian** to locate notes and roots; **Page Master** to document; **Lessons Learned** on complete/major revision; **Accountant** for cost assessment (including cheaper@≥quality)  
 8. Vault permanent change? → REVIEW_QUEUE + wait for user approval — never auto-commit  
 9. Skill vs personality unclear? → `Skills/Agent-Skill-Map.md`  
+10. Found an old `SKILLS.md`? → `Skills/Relocate-Consolidate.md` — do not dual-maintain  
 
 ---
 

@@ -1,9 +1,11 @@
 # Agent ↔ Skill Map (Codex / GPT work pack)
 
 **Personalities** = paste packs under `personalities/` (instruction surface).  
-**Skills** = operational procedures (local SKILL.md bodies and/or Vault `Skills/Custom/` overlays when reachable).
+**Skills** = operational procedures (local `SKILL.md` bodies and/or Vault `Skills/Custom/` overlays when reachable).
 
 This map is the portable, work-safe subset of the private AI-Mind-Vault skill routing. It does not replace `AGENTS.md`.
+
+**Existing catalogs:** If you still have root or project `SKILLS.md` / `skills.md` files, fold them in using **`Skills/Relocate-Consolidate.md`** (discover → classify → merge → tombstone). Do not maintain a second root catalog alongside this map.
 
 ---
 
@@ -90,6 +92,7 @@ When those are needed, use the private Vault (and its approval gate). Do not for
 3. **New portable skill:** add a short instruction block (when maintained for Codex) **and** a row in this map. Full runtime body may live in local `SKILL.md` or Vault `Skills/Custom/`.
 4. **Vault permanent skill notes** still require REVIEW_QUEUE + explicit user approval. Pack map updates are pack architecture (git on this repo under user direction).
 5. Prefer existing map entries over inventing parallel skill names.
+6. **No parallel root `SKILLS.md`.** Relocate/consolidate per `Skills/Relocate-Consolidate.md`.
 
 ---
 
@@ -98,3 +101,4 @@ When those are needed, use the private Vault (and its approval gate). Do not for
 - **Owner (pack):** Page Master + Librarian when updating the portable map.
 - **Source of truth for full skill set:** private AI-Mind-Vault `Skills/Agent-Skill-Map.md` + `Skills/Custom/`.
 - After approved Vault skill changes that affect work surface, sync this file (Vault → pack) on user request.
+- When absorbing legacy catalogs, follow `Skills/Relocate-Consolidate.md` and tombstone old paths.
