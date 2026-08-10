@@ -13,7 +13,7 @@ Public, work-safe surface of the private AI-Mind-Vault: same Harness · Loop · 
 ├── AGENTS.md
 ├── PATHS.example.md        # copy → PATHS.md to remap
 ├── GIT.md                  # traditional git workflow + Vault approval gate
-├── Skills/                 # Agent ↔ Skill map (work-safe)
+├── Skills/                 # map + relocate/consolidate legacy SKILLS.md
 ├── core/
 ├── templates/
 ├── personalities/
@@ -61,7 +61,7 @@ Agents must not auto-commit to the Vault. See **`GIT.md`**.
 |------|----------|
 | Boot | `AGENTS.md` |
 | Architecture | `core/` (HLG, Nested Cycles, Graph, Eval, Diagram, RAI, Lessons) |
-| **Skills map** | `Skills/Agent-Skill-Map.md` — persona → skill routing (work-safe) |
+| **Skills** | `Skills/Agent-Skill-Map.md` + `Skills/Relocate-Consolidate.md` |
 | Templates | Diamond, Handoff, Probe Suite, Residue, Cost Ledger, Lessons, … |
 | Personalities | Librarian, Page Master, Lessons Learned, Accountant, PHD Researcher, Code Architect, Forge Hardware, FDE |
 | Projects path | Scaffold only |
@@ -78,14 +78,16 @@ Agents must not auto-commit to the Vault. See **`GIT.md`**.
 5. Use git per `GIT.md`.
 6. **Vault permanent edits → REVIEW_QUEUE + user approval only.**
 7. Skill vs personality → `Skills/Agent-Skill-Map.md`.
+8. Legacy root `SKILLS.md` → `Skills/Relocate-Consolidate.md` (do not dual-maintain).
 
 ---
 
 ## Changelog
 
 ### 2026-08-10
-- `Skills/Agent-Skill-Map.md` + `Skills/README.md` — work-safe persona→skill routing aligned with Vault map.
-- AGENTS.md / README point at the skills map.
+- `Skills/Agent-Skill-Map.md` + `Skills/README.md` — work-safe persona→skill routing.
+- `Skills/Relocate-Consolidate.md` — discover / classify / merge / tombstone existing `SKILLS.md` files; optional `SKILLS_RUNTIME` in PATHS.
+- AGENTS.md / README / PATHS.example aligned.
 
 ### 2026-08-07
 - `GIT.md` expanded: hard separation from private AI-Mind-Vault; permanent Vault changes require user approval.
