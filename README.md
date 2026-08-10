@@ -13,26 +13,22 @@ Public, work-safe surface of the private AI-Mind-Vault: same Harness · Loop · 
 ├── AGENTS.md
 ├── PATHS.example.md        # copy → PATHS.md to remap
 ├── GIT.md                  # traditional git workflow + Vault approval gate
+├── Skills/                 # Agent ↔ Skill map (work-safe)
 ├── core/
 ├── templates/
 ├── personalities/
 └── Projects/
 ```
 
-**Do not** nest this pack under a project-chat folder (e.g. `AI DEV/codex-mind-pack/`) unless you deliberately set that path in `PATHS.md`.
-
-**Librarian** owns path orientation (`PATHS.md` / defaults). Other agents read the same map; they do not invent a third root.
+**Do not** nest this pack under a project-chat folder unless you deliberately set that path in `PATHS.md`.
 
 ---
 
 ## Remap if you already have a structure
 
 1. Copy `PATHS.example.md` → **`PATHS.md`** (gitignored, local only).
-2. Set:
-   - `PACK_ROOT` — where architecture files live
-   - `PROJECTS_DIR` — where active projects live (may be outside `PACK_ROOT`)
+2. Set `PACK_ROOT` and `PROJECTS_DIR` as needed.
 3. Agents read `PATHS.md` when present; otherwise use Documents/Codex defaults.
-4. On path confusion, activate **Librarian**.
 
 Details: **`PATHS.example.md`**.
 
@@ -40,31 +36,22 @@ Details: **`PATHS.example.md`**.
 
 ## Git (traditional) + Vault gate
 
-This pack is a normal git repo. Use clone, pull, branch, commit, push — see **`GIT.md`**.
+This pack is a normal git repo. See **`GIT.md`**.
 
 ```bash
-# Default install
 mkdir -p ~/Documents/Codex
 git clone https://github.com/kniffinjjr/codex-mind-pack.git ~/Documents/Codex
 cd ~/Documents/Codex
 cp PATHS.example.md PATHS.md   # optional remap
-
-# Update
-git pull origin main
+git pull origin main           # updates
 ```
-
-**Critical separation:**
 
 | Repo | Permanent changes require |
 |------|---------------------------|
 | **codex-mind-pack** (this) | User direction for architecture; normal git |
-| **AI-Mind-Vault** (private) | Explicit user **approval** via REVIEW_QUEUE before any controlling-doc commit |
+| **AI-Mind-Vault** (private) | Explicit user **approval** via REVIEW_QUEUE |
 
-Agents must not auto-commit to the Vault. Pack work stays in this repo (or local/private project remotes). See **`GIT.md`** section “Hard rule: AI-Mind-Vault vs this pack”.
-
-- Do not commit secrets or `PATHS.md`.
-- Prefer not to push private `Projects/<slug>/` to the public origin.
-- Optional private remote for work residue — described in `GIT.md`.
+Agents must not auto-commit to the Vault. See **`GIT.md`**.
 
 ---
 
@@ -73,52 +60,37 @@ Agents must not auto-commit to the Vault. Pack work stays in this repo (or local
 | Area | Contents |
 |------|----------|
 | Boot | `AGENTS.md` |
-| Architecture | `core/` (HLG, Nested Cycles, Graph, Eval, Diagram, RAI, **Lessons Learned**) |
-| Templates | Diamond, Handoff, Probe Suite, Residue, Cost Ledger, **Lessons-Learned**, … |
-| Personalities (work) | Librarian, Page Master, **Lessons Learned**, Accountant, PHD Researcher, Code Architect, Forge Hardware, FDE |
-| Projects path | Scaffold only — no shipped real projects |
+| Architecture | `core/` (HLG, Nested Cycles, Graph, Eval, Diagram, RAI, Lessons) |
+| **Skills map** | `Skills/Agent-Skill-Map.md` — persona → skill routing (work-safe) |
+| Templates | Diamond, Handoff, Probe Suite, Residue, Cost Ledger, Lessons, … |
+| Personalities | Librarian, Page Master, Lessons Learned, Accountant, PHD Researcher, Code Architect, Forge Hardware, FDE |
+| Projects path | Scaffold only |
 | Paths / Git | `PATHS.example.md`, `GIT.md`, `.gitignore` |
 
 ---
 
 ## Agent install rules (short)
 
-1. Resolve `PATHS.md` → else `Documents/Codex` (Librarian on confusion).
+1. Resolve `PATHS.md` → else `Documents/Codex`.
 2. Write architecture under `PACK_ROOT`.
 3. Write active work under `PROJECTS_DIR/<slug>/`.
 4. Project chat ≠ pack home unless PATHS says so.
 5. Use git per `GIT.md`.
 6. **Vault permanent edits → REVIEW_QUEUE + user approval only.**
-7. Accountant assessments include **cheaper @ ≥ same quality** checks.
-8. On project complete or major revision → **Lessons Learned** → `{PROJECTS_DIR}/<slug>/Lessons-Learned.md`.
+7. Skill vs personality → `Skills/Agent-Skill-Map.md`.
 
 ---
 
 ## Changelog
 
-### 2026-08-09 (Lessons Learned)
-- `core/Lessons-Learned-Review.md` — after-action process (Scope→Gather→Classify→Review→Commit).
-- `templates/Lessons-Learned.md` — standard artifact.
-- `personalities/Lessons-Learned.md` — paste-ready agent pack.
-- AGENTS: **W6b Lessons**; §7 / §9 / §10 / §11 wired.
-- Synced from private AI-Mind-Vault lessons-learned skill (work-safe surface only).
-
-### 2026-08-07 (Accountant + PATHS)
-- Accountant: required **cheaper@≥quality** efficiency check on every assessment.
-- PATHS / Librarian: explicit ownership of path orientation; agents must not invent third roots.
-- AGENTS §0 / §4 / failure card / README aligned.
+### 2026-08-10
+- `Skills/Agent-Skill-Map.md` + `Skills/README.md` — work-safe persona→skill routing aligned with Vault map.
+- AGENTS.md / README point at the skills map.
 
 ### 2026-08-07
-- `GIT.md` expanded: hard separation from private AI-Mind-Vault; permanent Vault changes require user approval via REVIEW_QUEUE.
-- README / agent rules call out the gate explicitly.
+- `GIT.md` expanded: hard separation from private AI-Mind-Vault; permanent Vault changes require user approval.
 
-### 2026-08-06 (paths + git)
-- `PATHS.example.md` — remappable `PACK_ROOT` / `PROJECTS_DIR`.
-- `GIT.md` — traditional git clone/pull/branch/commit policy.
-- `.gitignore` — `PATHS.md`, secrets, local noise.
-- Default root remains `Documents/Codex/`; existing layouts can opt out via PATHS.
-
-### 2026-08-06 (earlier)
-- Projects scaffold; work personalities only; install-root docs.
+### 2026-08-06
+- PATHS + git install docs; projects scaffold; work personalities.
 
 Created 2026-08-03 / 2026-08-04.

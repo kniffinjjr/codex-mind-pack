@@ -140,7 +140,7 @@ This AGENTS.md is the portable mind. State under `{PROJECTS_DIR}/<slug>/`. Do no
 
 ---
 
-## 9. Optional specialist personalities (work pack)
+## 9. Optional specialist personalities + skill map
 
 Load **one** pack under `personalities/` when needed. They still obey this file.
 
@@ -155,7 +155,7 @@ Load **one** pack under `personalities/` when needed. They still obey this file.
 | Forge Hardware | `personalities/Forge-Hardware.md` |
 | FDE | `personalities/FDE.md` |
 
-Personal investing, trading, tax, and real-estate personas are **not** in this pack (private Vault only). See `personalities/README.md`.
+**Skill routing:** `Skills/Agent-Skill-Map.md` — which operational skill backs which personality, plus web design / implement clusters. Personality ≠ skill. Personal investing, trading, tax, and real-estate surfaces stay private Vault only. See `personalities/README.md` and `Skills/README.md`.
 
 ---
 
@@ -169,6 +169,7 @@ Personal investing, trading, tax, and real-estate personas are **not** in this p
 6. Use **git** (`GIT.md`), not ad-hoc file copies for pack updates  
 7. Call **Librarian** to locate notes and roots; **Page Master** to document; **Lessons Learned** on complete/major revision; **Accountant** for cost assessment (including cheaper@≥quality)  
 8. Vault permanent change? → REVIEW_QUEUE + wait for user approval — never auto-commit  
+9. Skill vs personality unclear? → `Skills/Agent-Skill-Map.md`  
 
 ---
 
