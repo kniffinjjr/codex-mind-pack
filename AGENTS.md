@@ -91,6 +91,7 @@ Diagram geometry: `core/Diagram-Principles.md`.
 | **W4 Diagnose** | Layer then grain |
 | **W5 Handoff** | Pre-split test; Handoff artifact |
 | **W6 Improve** | Probe Suite / RAI |
+| **W6b Lessons** | Project complete or major revision → `core/Lessons-Learned-Review.md` |
 | **W7 Mind change** | Explicit user direction; Vault permanent edits via REVIEW_QUEUE only |
 
 ---
@@ -129,6 +130,8 @@ Intent · Decisions · Artifacts by ref · **Ruled-out paths** · Open questions
 
 Spec = this file. Run Probe Suite; one lever per failure; leave ledger. See `core/RAI-Improvement.md`, `core/Eval-Engineering.md`.
 
+After project complete or major revision: run **Lessons Learned** (`personalities/Lessons-Learned.md`, `core/Lessons-Learned-Review.md`) so residue compounds.
+
 ---
 
 ## 8. Offline / no private vault
@@ -145,6 +148,7 @@ Load **one** pack under `personalities/` when needed. They still obey this file.
 |------|------|
 | Librarian | `personalities/Librarian.md` |
 | Page Master | `personalities/Page-Master.md` |
+| Lessons Learned | `personalities/Lessons-Learned.md` |
 | Accountant | `personalities/Accountant.md` |
 | PHD Researcher | `personalities/PHD-Researcher.md` |
 | Code Architect | `personalities/Code-Architect.md` |
@@ -163,7 +167,7 @@ Personal investing, trading, tax, and real-estate personas are **not** in this p
 4. Human gate at irreversible steps  
 5. Which **grain** failed?  
 6. Use **git** (`GIT.md`), not ad-hoc file copies for pack updates  
-7. Call **Librarian** to locate notes and roots; **Page Master** to document; **Accountant** for cost assessment (including cheaper@≥quality)  
+7. Call **Librarian** to locate notes and roots; **Page Master** to document; **Lessons Learned** on complete/major revision; **Accountant** for cost assessment (including cheaper@≥quality)  
 8. Vault permanent change? → REVIEW_QUEUE + wait for user approval — never auto-commit  
 
 ---
@@ -178,7 +182,7 @@ Default `PROJECTS_DIR` = `{PACK_ROOT}/Projects`. Override in `PATHS.md` if you a
 
 1. Copy pack `Projects/_template` into `{PROJECTS_DIR}/<slug>/`.
 2. Maintain Overview + Nested-HLG.
-3. Residue stays in that folder (including `cost-ledger.md` when tracking spend).
+3. Residue stays in that folder (including `cost-ledger.md` when tracking spend; `Lessons-Learned.md` after close-out or major revision).
 4. Register in `_index.md`.
 5. No secrets in git. See `Projects/README.md`, `.gitignore`, `GIT.md`.
 

@@ -14,6 +14,7 @@ Optional, paste-ready instruction packs. They obey `AGENTS.md` and do not replac
 |------|------|-------------|
 | Librarian | `Librarian.md` | Orient, locate, route pack knowledge (GrokRarian portable) |
 | Page Master | `Page-Master.md` | Technical writing, guides, runbooks, short instruction packs |
+| Lessons Learned | `Lessons-Learned.md` | After-action on complete or major revision; Local vs Portable commit |
 | Accountant | `Accountant.md` | Tokens → credits → USD; per-project ledger; on-demand cost assessment |
 | PHD Researcher | `PHD-Researcher.md` | First-principles research & truth-seeking |
 | Code Architect | `Code-Architect.md` | Production software design & debugging |
@@ -26,6 +27,14 @@ Optional, paste-ready instruction packs. They obey `AGENTS.md` and do not replac
 - Templates: `templates/Cost-Ledger.md`, `templates/Rate-Card.md`
 - Ledger path: `{PROJECTS_DIR}/<slug>/cost-ledger.md`
 - Triggers include: cost assessment, running total, token cost, credit burn, budget check
+
+## Lessons learned
+
+- Personality: `Lessons-Learned.md`
+- Process: `core/Lessons-Learned-Review.md`
+- Template: `templates/Lessons-Learned.md`
+- Project path: `{PROJECTS_DIR}/<slug>/Lessons-Learned.md`
+- Triggers: lessons learned, postmortem, retrospective, after-action, close out project
 
 ## Not in this pack (private Vault / personal only)
 

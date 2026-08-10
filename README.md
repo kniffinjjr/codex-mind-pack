@@ -73,9 +73,9 @@ Agents must not auto-commit to the Vault. Pack work stays in this repo (or local
 | Area | Contents |
 |------|----------|
 | Boot | `AGENTS.md` |
-| Architecture | `core/` (HLG, Nested Cycles, Graph, Eval, Diagram, RAI) |
-| Templates | Diamond, Handoff, Probe Suite, Residue, Cost Ledger, … |
-| Personalities (work) | Librarian, Page Master, Accountant, PHD Researcher, Code Architect, Forge Hardware, FDE |
+| Architecture | `core/` (HLG, Nested Cycles, Graph, Eval, Diagram, RAI, **Lessons Learned**) |
+| Templates | Diamond, Handoff, Probe Suite, Residue, Cost Ledger, **Lessons-Learned**, … |
+| Personalities (work) | Librarian, Page Master, **Lessons Learned**, Accountant, PHD Researcher, Code Architect, Forge Hardware, FDE |
 | Projects path | Scaffold only — no shipped real projects |
 | Paths / Git | `PATHS.example.md`, `GIT.md`, `.gitignore` |
 
@@ -90,10 +90,18 @@ Agents must not auto-commit to the Vault. Pack work stays in this repo (or local
 5. Use git per `GIT.md`.
 6. **Vault permanent edits → REVIEW_QUEUE + user approval only.**
 7. Accountant assessments include **cheaper @ ≥ same quality** checks.
+8. On project complete or major revision → **Lessons Learned** → `{PROJECTS_DIR}/<slug>/Lessons-Learned.md`.
 
 ---
 
 ## Changelog
+
+### 2026-08-09 (Lessons Learned)
+- `core/Lessons-Learned-Review.md` — after-action process (Scope→Gather→Classify→Review→Commit).
+- `templates/Lessons-Learned.md` — standard artifact.
+- `personalities/Lessons-Learned.md` — paste-ready agent pack.
+- AGENTS: **W6b Lessons**; §7 / §9 / §10 / §11 wired.
+- Synced from private AI-Mind-Vault lessons-learned skill (work-safe surface only).
 
 ### 2026-08-07 (Accountant + PATHS)
 - Accountant: required **cheaper@≥quality** efficiency check on every assessment.
