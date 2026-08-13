@@ -60,9 +60,9 @@ Agents must not auto-commit to the Vault. See **`GIT.md`**.
 | Area | Contents |
 |------|----------|
 | Boot | `AGENTS.md` |
-| Architecture | `core/` (HLG, Nested Cycles, Graph, Eval, Diagram, RAI, Lessons) |
+| Architecture | `core/` (HLG, Nested Cycles, Graph, Eval, Diagram, RAI, Lessons, **Hypervault-Work-Mind**) |
 | **Skills** | `Skills/Agent-Skill-Map.md` + `Skills/Relocate-Consolidate.md` |
-| Templates | Diamond, Handoff, Probe Suite, Residue, Cost Ledger, Lessons, … |
+| Templates | Diamond, Handoff, Probe Suite, Residue, Cost Ledger, Lessons, **Run Knowledge Extract**, **Project-Overview-Hypervault**, … |
 | Personalities | Librarian, Page Master, Lessons Learned, Accountant, PHD Researcher, Code Architect, Forge Hardware, FDE |
 | Projects path | Scaffold only |
 | Paths / Git | `PATHS.example.md`, `GIT.md`, `.gitignore` |
@@ -79,10 +79,19 @@ Agents must not auto-commit to the Vault. See **`GIT.md`**.
 6. **Vault permanent edits → REVIEW_QUEUE + user approval only.**
 7. Skill vs personality → `Skills/Agent-Skill-Map.md`.
 8. Legacy root `SKILLS.md` → `Skills/Relocate-Consolidate.md` (do not dual-maintain).
+9. **Hypervault (optional):** work-only vault + `core/Hypervault-Work-Mind.md`; never point the city at personal notes or pack `core/`.
 
 ---
 
 ## Changelog
+
+### 2026-08-13
+- `core/Hypervault-Work-Mind.md` — work-safe Hypervault (Obsidian 3D city) wiring: vault root, IP firewall, agent launch rules.
+- `templates/Project-Overview-Hypervault.md` — frontmatter for project buildings (status/priority/category/`projectDir`).
+
+### 2026-08-12
+- `templates/Run-Knowledge-Extract.md` — nodes/edges residue after meaningful runs.
+- `core/Harness-Loop-Graph.md` — Skill Execution Contract hard stops.
 
 ### 2026-08-10
 - `Skills/Agent-Skill-Map.md` + `Skills/README.md` — work-safe persona→skill routing.
