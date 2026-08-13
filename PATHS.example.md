@@ -14,6 +14,7 @@ Copy this file to **`PATHS.md`** in the pack root and edit it if you are **not**
 | `PROJECTS_DIR` | `{PACK_ROOT}/Projects` |
 | `GLOBAL_AGENTS` | `~/.codex/AGENTS.md` (optional copy) |
 | `SKILLS_RUNTIME` | *(unset)* — optional path to agent host skill directories |
+| `HYPERVAULT_VAULT` | *(unset)* — optional **work-only** Obsidian vault root for Hypervault; must not be personal My-Mind |
 
 ## Location rules
 
@@ -23,6 +24,7 @@ Copy this file to **`PATHS.md`** in the pack root and edit it if you are **not**
 | Skill **routing** map | `{PACK_ROOT}/Skills/Agent-Skill-Map.md` |
 | Active project residue (including `cost-ledger.md`) | `{PROJECTS_DIR}/<slug>/` |
 | Optional skill **runtime bodies** | `{SKILLS_RUNTIME}/<skill-id>/` (or platform default) |
+| Hypervault / Obsidian city (optional) | `{HYPERVAULT_VAULT}` — work projects only; see `core/Hypervault-Work-Mind.md` |
 | This map | `{PACK_ROOT}/PATHS.md` (local only) |
 | Example map (committed) | `{PACK_ROOT}/PATHS.example.md` |
 
@@ -42,6 +44,9 @@ SKILLS_RUNTIME: C:/Users/you/.grok/skills
 
 # Optional: if active work already lives elsewhere, point at it instead of migrating
 # PROJECTS_DIR: D:/Work/existing-projects-tree
+
+# Optional: work-only Obsidian vault for Hypervault (never personal notes)
+# HYPERVAULT_VAULT: D:/Work/Work-Mind-Vault
 ```
 
 ## Example: macOS / Linux custom
@@ -50,6 +55,7 @@ SKILLS_RUNTIME: C:/Users/you/.grok/skills
 PACK_ROOT: /Users/you/src/codex-mind
 PROJECTS_DIR: /Users/you/src/codex-mind/Projects
 SKILLS_RUNTIME: /Users/you/.grok/skills
+# HYPERVAULT_VAULT: /Users/you/work/Work-Mind-Vault
 ```
 
 ## Rules for agents
@@ -63,3 +69,4 @@ SKILLS_RUNTIME: /Users/you/.grok/skills
 7. **Accountant**, Page Master, and other specialists read the same map; they do not redefine it.
 8. Changes to committed path *policy* (this example, AGENTS §0, Librarian rules) require user direction and a normal pack git commit — not silent agent rewrites.
 9. Skill **routing** = pack `Skills/Agent-Skill-Map.md`. Skill **bodies** may resolve via `SKILLS_RUNTIME` when set. Legacy root `SKILLS.md` files are relocated, not dual-maintained.
+10. If `HYPERVAULT_VAULT` is set, it must be **work-only**. Do not point Hypervault at personal My-Mind or at `PACK_ROOT/core`.
