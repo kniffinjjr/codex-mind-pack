@@ -70,6 +70,8 @@ See `GIT.md` section “Hard rule: AI-Mind-Vault vs this pack”.
 
 Nested grains: **Inner** ⊂ **Mid** ⊂ **Outer**. See `core/Nested-Cycles.md` and `core/Harness-Loop-Graph.md`.
 
+**Important separation (2026-08-14):** High-level HLG principles (evidence over confidence, smallest graph, Writer ≠ Checker, Qualifying Test) belong here and in `core/Harness-Loop-Graph.md`. The *detailed* Skill Execution Contract (max tool attempts table, “narration ≠ progress”, single-pass anti-meta-loop rules) lives **only** inside the `harness-loop-graph` skill and applies **only while that skill is active**. Do not promote those bounds into the default agent turn or ordinary coding work — that was making simple tasks slow.
+
 ---
 
 ## 2. Graph rules
