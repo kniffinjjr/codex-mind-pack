@@ -4,20 +4,7 @@
 
 Mental model: **Environment → Feedback → Flow**
 
-## Skill Execution Contract (hard stops) — 2026-08-12
-
-Applying HLG is a **review/design procedure, not an open-ended agent**. It MUST terminate.
-
-| Bound | Default |
-|-------|---------|
-| Max tool attempts per distinct action | **3** |
-| Identical failed action | **1 retry → escalate/stop** |
-| Review passes on same artifact | **2** |
-| Progress each iteration | **New evidence** or stop branch |
-
-**Exit when:** diagnosis delivered · template filled · bound hit · user stops.
-
-**Anti-meta-loop:** Do not re-read the same skill or restate the same plan without intervening evidence. Narration ≠ progress. Diagnosing unbounded loops is **single-pass** — deliver, then exit.
+> **Scope note (2026-08-14):** The detailed Skill Execution Contract (bounds table, progress rule, anti-meta-loop, single-pass exit) lives **only** in the `harness-loop-graph` skill and applies **only while that skill is active**. Do not treat those hard stops as default behavior for ordinary turns, coding, or simple tasks. High-level principles below remain core.
 
 ## 1. Agent Harness Engineering
 Everything outside the model: system/context, tools, memory/files, sandboxes, routing, permissions, logging, verification interfaces, observability.
