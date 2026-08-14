@@ -30,7 +30,7 @@ Load **one** personality pack at a time. Skills still obey `AGENTS.md` (HLG, res
 
 | Skill | Use |
 |-------|-----|
-| `harness-loop-graph` | Agent architecture: Harness · Loop · Graph |
+| `harness-loop-graph` | **Architecture / design / diagnosis only.** Agent architecture: Harness · Loop · Graph. Activate only on explicit design/review/debug of agentic systems. Do **not** auto-apply to ordinary coding, simple Q&A, or routine turns — the detailed hard-stop contract is skill-session only. |
 | `eval-engineering` | Probes, RAI, verdicts that change the next edge |
 | `diagram-design` | Architecture / workflow visuals (HTML+SVG) |
 | `fde` | Ship persistent, auditable production tools |
