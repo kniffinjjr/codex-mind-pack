@@ -6,11 +6,13 @@ Portable skill **routing** for this work pack. Full operational skill bodies oft
 |------|--------|
 | `Agent-Skill-Map.md` | Persona → skill map + design / implement clusters + design rules |
 | `Relocate-Consolidate.md` | Discover, classify, merge, and tombstone existing `SKILLS.md` / `skills.md` files |
+| `book-skill.md` | Local PDF/EPUB → on-demand skill pack under Work-Mind (or My-Mind); see `templates/Book-Skill-Pack.md` |
 
 **Related**
 
 - Personalities (paste packs): `../personalities/`
 - Core architecture: `../AGENTS.md`, `../core/`
+- Templates: `../templates/Book-Skill-Pack.md`
 - Private full catalog: AI-Mind-Vault `Skills/` (approval-gated)
 - Local path overrides: `../PATHS.md` (optional `SKILLS_RUNTIME`)
 

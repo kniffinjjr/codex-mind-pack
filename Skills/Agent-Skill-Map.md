@@ -38,6 +38,7 @@ Load **one** personality pack at a time. Skills still obey `AGENTS.md` (HLG, res
 | `lessons-learned` | After-action on complete or major revision |
 | `page-master` | Guides, runbooks, short instruction packs |
 | `grokrarian` / Librarian | Orient, locate, route knowledge; PATHS hygiene |
+| `book-skill` | Local PDF/EPUB → on-demand skill pack under Work-Mind (work books) or My-Mind (personal); layout `templates/Book-Skill-Pack.md` |
 
 ---
 
